@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { gsap } from 'gsap';
 import styles from '../../styles/Home.module.css'
+
 type Props = {
 	title?: string
 }
