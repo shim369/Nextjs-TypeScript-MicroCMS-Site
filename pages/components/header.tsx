@@ -1,11 +1,13 @@
 import Image from 'next/image'
-import { gsap } from 'gsap';
 import styles from '../../styles/Home.module.css'
+import { gsap } from 'gsap'
 
 type Props = {
 	title?: string
+	document?: Document
 }
 export default function Header({ title }: Props) {
+	if (typeof window === 'object') {
 	const hero = document.querySelector(".hero");
 	const slider = document.querySelector(".slider");
 	const logo = document.querySelector(".logo");
@@ -31,12 +33,12 @@ export default function Header({ title }: Props) {
 	.fromTo(logo, 0.5, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, "-=0.5")
 	.fromTo(menu, 0.5, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, "-=0.5")
 	.fromTo(headline, 0.5, { opacity: 0, x: 0 }, { opacity: 1, x: 30 }, "-=0.5");
-
+	}
 	return (
 		<>
 			<header>
 			<nav>
-				<h2 className={styles.logo}>TECH BLOG</h2>
+				<h2 className={styles.logo}>{ title }</h2>
 				<ul className={styles.menu}>
 					<li><a href="">PYTHON</a></li>
 					<li><a href="">JS</a></li>

@@ -3,6 +3,8 @@ import Header from './header'
 import Footer from './footer'
 type Props = {
 	children?: React.ReactNode
+	title?: string
+	document?: Document
 }
 export default function Contents({ children }: Props) {
 	const title = "Vercel deploy test"
