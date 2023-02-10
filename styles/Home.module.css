@@ -1,5 +1,63 @@
-.title__test {
-	font-size: 20px;
-	font-weight: bold;
-	color: red;
+.logo {
+    grid-column: 2/3;
+    font-size: 24px;
+}
+
+.menu {
+    justify-self: end;
+	display: flex;
+	list-style: none;
+}
+.menu li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 20px;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, #7453ba, #8e84d1);
+    z-index: -1;
+}
+
+.hero {
+    height: 60%;
+    width: 100%;
+    position: relative;
+}
+
+.hero img {
+ height: 100%;
+ width: 100%;
+ object-fit: cover;
+}
+
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.headline {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-10%, -50%);
+    z-index: 3;
+}
+
+.message {
+	margin: 20px 0;
 }
