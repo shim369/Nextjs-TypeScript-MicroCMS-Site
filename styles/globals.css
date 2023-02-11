@@ -13,9 +13,7 @@
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
-body {
-	background: #7453ba;
-}
+
 nav {
     display: grid;
     grid-template-columns: 10% 1fr 1fr 10%;
@@ -28,16 +26,9 @@ nav {
 main {
 	text-align: center;
 	color: #fff;
-	padding: 60px 0;
-	background: #7453ba;
+	padding: 60px 0 0;
 }
 
 main a {
 	color: #fff;
-}
-footer {
-	text-align: center;
-	color: #fff;
-	background: #7453ba;
-	padding: 20px 0;
 }

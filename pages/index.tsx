@@ -71,6 +71,7 @@ export default function Home({ title }: Props) {
 
 	return (
 		<>
+		<div className={styles.wrapper}>
 		<Header />
 		<Layout>
 			<div className={styles.mainInner}>
@@ -109,17 +110,16 @@ export default function Home({ title }: Props) {
 				</div>
 				</div>
 			</section>
-			<section className={styles.section}>
-				<div className={styles.container}>
+			<section>
 				<div className={styles.contact}>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur, quod mollitia voluptates esse ullam. Corrupti ullam adipisci enim nisi dolore voluptatum, praesentium amet dolores odio aliquam possimus itaque consequuntur!</p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur, quod mollitia voluptates esse ullam. Corrupti ullam adipisci enim nisi dolore voluptatum, praesentium amet dolores odio aliquam possimus itaque consequuntur!</p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur, quod mollitia voluptates esse ullam. Corrupti ullam adipisci enim nisi dolore voluptatum, praesentium amet dolores odio aliquam possimus itaque consequuntur!</p>
 				</div>
-				</div>
 			</section>
 			</div>
 		</Layout>
+			</div>
 		</>
 	)
 }
