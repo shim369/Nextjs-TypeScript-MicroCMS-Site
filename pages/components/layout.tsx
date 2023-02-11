@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
+import styles from '../../styles/Home.module.css'
 type Props = {
 	children?: React.ReactNode
 	title?: string
@@ -18,11 +19,7 @@ export default function Contents({ children }: Props) {
 		<meta name="robots" content="noindex" />
 		</Head>
 		<Header title={ title } />
-		<main>
-		<div className="container">
 			{ children }
-		</div>
-		</main>
 		<Footer />
 		</>
 	)
