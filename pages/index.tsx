@@ -1,11 +1,15 @@
 import Layout from './components/layout'
+import Header from './components/header'
 import React, { useRef, useEffect } from 'react'
 // import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-export default function Home() {
+type Props = {
+	title?: string
+}
+export default function Home({ title }: Props) {
 
 	gsap.registerPlugin(ScrollTrigger)
 
@@ -27,26 +31,26 @@ export default function Home() {
 		  invalidateOnRefresh: true,
 		},
 	  })
-	  gsap.to('main', {
+	  gsap.to('mainInner', {
 		scrollTrigger: {
 		  trigger: '#horizontal-scroll-section',
 		  start: 'top center',
 		  end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth + 200}`,
 		  scrub: true, 
-		  onEnter: () => gsap.to('main', {
-			backgroundColor: 'red',
+		  onEnter: () => gsap.to('mainInner', {
+			backgroundColor: '#7453ba;',
 			duration: 1.4
 		  }),
-		  onLeave: () => gsap.to('main', {
-			backgroundColor: 'white',
+		  onLeave: () => gsap.to('mainInner', {
+			backgroundColor: '#bbb',
 			duration: 1.4
 		  }),
-		  onEnterBack: () => gsap.to('main', {
-			backgroundColor: 'black',
+		  onEnterBack: () => gsap.to('mainInner', {
+			backgroundColor: '#bbb',
 			duration: 1.4
 		  }),
-		  onLeaveBack: () => gsap.to('main', {
-			backgroundColor: 'green',
+		  onLeaveBack: () => gsap.to('mainInner', {
+			backgroundColor: '#7453ba;',
 			duration: 1.4
 		  }),
 		},
@@ -66,8 +70,10 @@ export default function Home() {
   }, [])
 
 	return (
+		<>
+		<Header />
 		<Layout>
-		<main className={styles.main}>
+			<div className={styles.mainInner}>
 			<section className={styles.section} id="horizontal-scroll-section">
 				<div className={styles.container}>
 				<div className={styles.pagesWrapper} ref={pagesWrapperRef}>
@@ -112,7 +118,8 @@ export default function Home() {
 				</div>
 				</div>
 			</section>
-		</main>
+			</div>
 		</Layout>
+		</>
 	)
 }

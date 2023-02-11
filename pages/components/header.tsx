@@ -2,20 +2,19 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 // import { gsap } from 'gsap'
 
-type Props = {
-	title?: string
-}
-export default function Header({ title }: Props) {
+
+export default function Header() {
+	const title = "Vercel deploy test"
 	return (
 		<>
-			<header>
+			<header className={styles.header}>
 			<nav>
 				<h2 className={styles.logo}><a href="./">{ title }</a></h2>
 				<ul className={styles.menu}>
 					<li><a href="">PYTHON</a></li>
 					<li><a href="">JS</a></li>
 					<li><a href="">TOOL</a></li>
-					<li><a href="./about">About</a></li>
+					<li><a href="./about">ABOUT</a></li>
 				</ul>
 			</nav>
 			<section className={styles.section}>

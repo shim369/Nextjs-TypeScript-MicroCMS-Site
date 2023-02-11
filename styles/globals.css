@@ -8,6 +8,14 @@
     font-family: "Poppins", sans-serif;
 }
 
+*::-webkit-scrollbar{
+	display:none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+body {
+	background: #7453ba;
+}
 nav {
     display: grid;
     grid-template-columns: 10% 1fr 1fr 10%;
@@ -21,7 +29,7 @@ main {
 	text-align: center;
 	color: #fff;
 	padding: 60px 0;
-	background: #7b7b7b;
+	background: #7453ba;
 }
 
 main a {
@@ -30,6 +38,6 @@ main a {
 footer {
 	text-align: center;
 	color: #fff;
-	background: #7b7b7b;
+	background: #7453ba;
 	padding: 20px 0;
 }
