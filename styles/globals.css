@@ -5,30 +5,11 @@
 	margin: 0;
 	padding: 0;
 	line-height: 1;
-    font-family: "Poppins", sans-serif;
+	font-family: "Poppins", sans-serif;
 }
 
 *::-webkit-scrollbar{
 	display:none;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
-}
-
-nav {
-    display: grid;
-    grid-template-columns: 10% 1fr 1fr 10%;
-    align-items: center;
-    color: white;
-    min-height: 10vh;
-}
-
-
-main {
-	text-align: center;
-	color: #fff;
-	padding: 60px 0 0;
-}
-
-main a {
-	color: #fff;
 }

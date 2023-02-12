@@ -18,7 +18,7 @@ export default function Header() {
 	return (
 		<>
 			<header ref={ref} className={styles.header}>
-			<nav>
+			<nav className={styles.nav}>
 				<h2 className={styles.logo}><a href="./">{ title }</a></h2>
 				<ul className={styles.menu}>
 					<li><a href="">PYTHON</a></li>
