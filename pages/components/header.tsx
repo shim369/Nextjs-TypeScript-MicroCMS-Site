@@ -6,15 +6,24 @@ import { gsap } from "gsap";
 
 export default function Header() {
 	const title = "Vercel deploy test"
-	const ref = React.useRef(null);
+	const ref = React.useRef(null)
+	const heroRef = useRef<HTMLDivElement | null >(null)
 	useEffect(() => {
-	  gsap.to(ref.current, {
-		backgroundImage: "linear-gradient(to left, #30CFD0, #330867)",
-		duration: 8,
-		repeat: -1,
-		ease: "power4.easeInOut"
-	  });
-	}, [ref]);
+		gsap.to(ref.current, {
+			backgroundImage: "linear-gradient(to left, #30CFD0, #330867)",
+			duration: 8,
+			repeat: -1,
+			ease: "power4.easeInOut"
+		})
+		gsap.from(heroRef.current, {
+			height: "0%",
+		})
+		gsap.to(heroRef.current, {
+			height: "80%",
+			width: "80%",
+			duration: 1.2,
+		})
+	})
 	return (
 		<>
 			<header ref={ref} className={styles.header}>
@@ -28,7 +37,7 @@ export default function Header() {
 				</ul>
 			</nav>
 			<section className={styles.section}>
-				<div className={styles.hero}>
+				<div ref={heroRef} className={styles.hero}>
 					<Image src="/images/3.jpg" alt="" width={800} height={500} />
 					<h1 className={styles.headline}>WEB DEVELOPMENT <br />AND LIFE BLOG</h1>
 				</div>
