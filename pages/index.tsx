@@ -6,10 +6,7 @@ import styles from '../styles/Home.module.css'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-type Props = {
-	title?: string
-}
-export default function Home({ title }: Props) {
+export default function Home() {
 
 	gsap.registerPlugin(ScrollTrigger)
 

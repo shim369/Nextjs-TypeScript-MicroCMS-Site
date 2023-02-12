@@ -43,7 +43,6 @@ export default function Header() {
 					<li><a href="">PYTHON</a></li>
 					<li><a href="">JS</a></li>
 					<li><a href="">TOOL</a></li>
-					<li><a href="./about">ABOUT</a></li>
 				</ul>
 			</nav>
 			<section className={styles.section}>
@@ -53,9 +52,7 @@ export default function Header() {
 				</div>
 			</section>
 			</header>
-			<div className={styles.slider}>
-
-			</div>
+			<div className={styles.slider}></div>
 		</>
 	)
 }
