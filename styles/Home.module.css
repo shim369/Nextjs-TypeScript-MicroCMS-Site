@@ -22,7 +22,7 @@
 	grid-template-columns: 10% 1fr 1fr 10%;
 	align-items: center;
 	color: white;
-	min-height: 10vh;
+	min-height: 15vh;
 }
 .menu {
     justify-self: end;
@@ -55,6 +55,7 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+	filter: grayscale(1);
 }
 
 
@@ -71,11 +72,11 @@
 
 .headline {
 	position: absolute;
-	top: 60%;
+	top: 70%;
 	left: 10%;
 	font-size: 60px;
 	line-height: 1.1;
-	color: #e9ffff;
+	color: #ffff;
 	transform: translate(-10%, -50%);
 	z-index: 3;
 }
