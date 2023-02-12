@@ -84,7 +84,8 @@
 	text-align: center;
 	color: #fff;
 	padding: 0;
-	background-image: linear-gradient(to left, #30CFD0, #239696);
+	background: #30CFD0;
+	/* background-image: linear-gradient(to left, #30CFD0, #239696); */
 }
 
 .main a {

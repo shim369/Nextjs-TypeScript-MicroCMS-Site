@@ -31,27 +31,27 @@ export default function Home({ title }: Props) {
 		  invalidateOnRefresh: true,
 		},
 	  })
-	  gsap.to('mainInner', {
+	  gsap.to('main', {
 		scrollTrigger: {
 		  trigger: '#horizontal-scroll-section',
 		  start: 'top center',
 		  end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth + 200}`,
 		  scrub: true, 
-		  onEnter: () => gsap.to('mainInner', {
-			backgroundColor: '#7453ba;',
-			duration: 1.4
-		  }),
-		  onLeave: () => gsap.to('mainInner', {
+		  onEnter: () => gsap.to('main', {
 			backgroundColor: '#bbb',
-			duration: 1.4
+			duration: 1.2
 		  }),
-		  onEnterBack: () => gsap.to('mainInner', {
+		  onLeave: () => gsap.to('main', {
+			backgroundColor: '#30CFD0',
+			duration: 1.2
+		  }),
+		  onEnterBack: () => gsap.to('main', {
 			backgroundColor: '#bbb',
-			duration: 1.4
+			duration: 1.2
 		  }),
-		  onLeaveBack: () => gsap.to('mainInner', {
-			backgroundColor: '#7453ba;',
-			duration: 1.4
+		  onLeaveBack: () => gsap.to('main', {
+			backgroundColor: '#30CFD0',
+			duration: 1.2
 		  }),
 		},
 	  })
@@ -71,10 +71,9 @@ export default function Home({ title }: Props) {
 
 	return (
 		<>
-		<div className={styles.wrapper}>
-		<Header />
-		<Layout>
-			<div className={styles.mainInner}>
+			<div className={styles.wrapper}>
+			<Header />
+			<Layout>
 			<section className={styles.section} id="horizontal-scroll-section">
 				<div className={styles.container}>
 				<div className={styles.pagesWrapper} ref={pagesWrapperRef}>
@@ -117,8 +116,7 @@ export default function Home({ title }: Props) {
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aspernatur, quod mollitia voluptates esse ullam. Corrupti ullam adipisci enim nisi dolore voluptatum, praesentium amet dolores odio aliquam possimus itaque consequuntur!</p>
 				</div>
 			</section>
-			</div>
-		</Layout>
+			</Layout>
 			</div>
 		</>
 	)
