@@ -12,8 +12,7 @@ export default function Header() {
 	useEffect(() => {
 		gsap.to(ref.current, {
 			backgroundImage: "linear-gradient(to left, #30CFD0, #330867)",
-			duration: 15,
-			repeat: -1,
+			duration: 8,
 		})
 		gsap.from(heroRef.current, {
 			height: "0%",
@@ -23,13 +22,15 @@ export default function Header() {
 			height: "90%",
 			width: "80%",
 			duration: 1.2,
-			ease: "Power3.easeInOut"
+			ease: "Power3.easeOut"
 		})
 		gsap.from(textRef.current, {
 			opacity: 0,
+			color: "transparent",
 		})
 		gsap.to(textRef.current, {
 			opacity: 1,
+			color: "#fde804",
 			duration: 1.2,
 		})
 	})
