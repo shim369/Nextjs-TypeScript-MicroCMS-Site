@@ -15,56 +15,56 @@ export default function Home() {
 	const didEffect = React.useRef(false);
   
 	const setupGsap = (pagesElement: HTMLDivElement, pagesWrapperElement: HTMLDivElement) => {
-	  gsap.to(pagesElement, {
-		x: () => -(pagesElement.clientWidth - pagesWrapperElement.clientWidth),
-		ease: 'none',
-		scrollTrigger: {
-		  trigger: '#horizontal-scroll-section',
-		  start: 'top top',
-		  end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth}`,
-		  scrub: true,
-		  pin: true,
-		  anticipatePin: 1,
-		  invalidateOnRefresh: true,
-		},
-	  })
-	  gsap.to('main', {
-		scrollTrigger: {
-		  trigger: '#horizontal-scroll-section',
-		  start: 'top center',
-		  end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth + 200}`,
-		  scrub: true, 
-		  onEnter: () => gsap.to('main', {
-			backgroundColor: '#bbb',
-			duration: 1.2
-		  }),
-		  onLeave: () => gsap.to('main', {
-			backgroundColor: '#30CFD0',
-			duration: 1.2
-		  }),
-		  onEnterBack: () => gsap.to('main', {
-			backgroundColor: '#bbb',
-			duration: 1.2
-		  }),
-		  onLeaveBack: () => gsap.to('main', {
-			backgroundColor: '#30CFD0',
-			duration: 1.2
-		  }),
-		},
-	  })
-  }
+		gsap.to(pagesElement, {
+			x: () => -(pagesElement.clientWidth - pagesWrapperElement.clientWidth),
+			ease: 'none',
+			scrollTrigger: {
+				trigger: '#horizontal-scroll-section',
+				start: 'top top',
+				end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth}`,
+				scrub: true,
+				pin: true,
+				anticipatePin: 1,
+				invalidateOnRefresh: true,
+			},
+		})
+		gsap.to('main', {
+			scrollTrigger: {
+				trigger: '#horizontal-scroll-section',
+				start: 'top center',
+				end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth + 200}`,
+				scrub: true, 
+				onEnter: () => gsap.to('main', {
+					backgroundColor: '#bbb',
+					duration: 1.2
+				}),
+				onLeave: () => gsap.to('main', {
+					backgroundColor: '#30CFD0',
+					duration: 1.2
+				}),
+				onEnterBack: () => gsap.to('main', {
+					backgroundColor: '#bbb',
+					duration: 1.2
+				}),
+				onLeaveBack: () => gsap.to('main', {
+					backgroundColor: '#30CFD0',
+					duration: 1.2
+				}),
+			},
+		})
+	}
   
 
-  useEffect(() => {
-	if (didEffect.current) return 
-	didEffect.current = true;
-	const pagesElement = pagesRef?.current;
-	if(!pagesElement) return
-	
-	const pagesWrapperElement = pagesWrapperRef?.current;
-	if(!pagesWrapperElement) return
-	setupGsap(pagesElement, pagesWrapperElement)
-  }, [])
+	useEffect(() => {
+		if (didEffect.current) return 
+		didEffect.current = true;
+		const pagesElement = pagesRef?.current;
+		if(!pagesElement) return
+		
+		const pagesWrapperElement = pagesWrapperRef?.current;
+		if(!pagesWrapperElement) return
+		setupGsap(pagesElement, pagesWrapperElement)
+	}, [])
 
 	return (
 		<>
