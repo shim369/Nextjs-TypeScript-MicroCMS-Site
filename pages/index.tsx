@@ -20,7 +20,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 			x: () => -(pagesElement.clientWidth - pagesWrapperElement.clientWidth),
 			ease: 'none',
 			scrollTrigger: {
-				trigger: '.horizontal-scroll-section',
+				trigger: '.horizontal',
 				start: 'top top',
 				end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth}`,
 				scrub: true,
@@ -31,7 +31,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 		})
 		gsap.to('#a03', {
 			scrollTrigger: {
-				trigger: '.horizontal-scroll-section',
+				trigger: '.horizontal',
 				start: 'top center',
 				end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth + 50}`,
 				scrub: true, 
@@ -104,7 +104,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 				</div>
 			</section>
 			<section id="a03">
-				<div className={`${styles.section} ${styles["horizontal-scroll-section"]}`}>
+				<div className="horizontal">
 				<div className={styles.container}>
 				<div className={styles.pagesWrapper} ref={pagesWrapperRef}>
 				<div className={styles.pages} ref={pagesRef} id="pages">
