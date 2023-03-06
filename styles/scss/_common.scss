@@ -102,12 +102,20 @@ header {
 			color: #fff;
 			padding: 40px;
 			transition: all .8s ease;
+			line-height: 1.1em;
+			@media (max-width: 800px) {
+				font-size: 2.5em;
+				padding: 15px;
+			}
 		}
 	}
 	nav {
 		position: absolute;
 		right: 0;
 		z-index: 5;
+		@media (max-width: 800px) {
+			display: none;
+		}
 		ul {
 			display: flex;
 			li {
@@ -139,14 +147,21 @@ header {
 		position: relative;
 		z-index: 2;
 		display: flex;
-		top: 130px;
+		top: 110px;
 		justify-content: center;
+		@media (max-width: 800px) {
+			top: 50px;
+		}
 		.hero {
 			position: relative;
 			z-index: 3;
 			width: 80%;
 			max-width: 1200px;
 			height: 550px;
+			@media (max-width: 800px) {
+				height: 75vh;
+				width: 92%;
+			}
 			img {
 				width: 100%;
 				height: 100%;
@@ -158,32 +173,47 @@ header {
 			top: 40%;
 			left: 20px;
 			z-index: 4;
+			@media (max-width: 800px) {
+				left: 2%;
+			}
 			h1 {
 				font-size: 6em;
 				color: #fff;
 				text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
 				line-height: 1;
 				font-weight: 900;
+				@media (max-width: 800px) {
+					font-size: 3em;
+				}
 			}
 			p {
 				color: #fff;
 				text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
+				@media (max-width: 800px) {
+					max-width: 80%;
+				}
 			}
 		}
 		.catch2 {
 			position: absolute;
 			z-index: 4;
 			right: 0;
-			bottom: -30px;
-			background: rgb(1 181 164 / 80%);
+			bottom: -50px;
+			background: rgb(0 0 0 / 60%);
 			width: 40%;
 			padding: 20px;
+			@media (max-width: 800px) {
+				width: 84%;
+    			bottom: -90px;
+			}
 			h2 {
 				font-size: 1.3em;
 				margin-bottom: 10px;
+				font-weight: 500;
 			}
 			p {
 				font-size: 1em;
+				line-height: 1.2em;
 			}
 		}
 	}
@@ -192,6 +222,9 @@ header {
 .container {
 	max-width: 1400px;
 	margin: 0 auto;
+	@media (max-width: 800px) {
+		padding: 4%;
+	}
 }
 
 section {
