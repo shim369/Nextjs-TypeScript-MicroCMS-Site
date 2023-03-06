@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Footer from './footer'
-import styles from '../../styles/Home.module.css'
 type Props = {
 	children?: React.ReactNode
 }
