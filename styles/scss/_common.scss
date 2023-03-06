@@ -6,6 +6,7 @@
 	outline: none;
 	box-sizing: border-box;
 	font-weight: 500;
+	word-break: break-all;
 }
 
 ul {
@@ -123,6 +124,8 @@ header {
 					padding: 35px 40px;
 					color: #fff;
 					transition: all .8s ease;
+					font-size: 1.2em;
+    				font-weight: 600;
 					&:hover {
 						background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
 
