@@ -15,7 +15,9 @@ export default function Contents({ children }: Props) {
 			<meta name="robots" content="noindex" />
 			</Head>
 			<main>
-				{ children }
+				<div className="container">
+					{ children }
+				</div>
 			</main>
 			<Footer />
 		</>

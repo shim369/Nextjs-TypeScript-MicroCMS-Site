@@ -1,33 +1,3 @@
-
-
-.slider {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 120vh;
-	/* background: linear-gradient(to left, #30CFD0, #8e84d1); */
-	z-index: -1;
-}
-
-
-.headline {
-	position: absolute;
-	top: 70%;
-	left: 10%;
-	font-size: 60px;
-	line-height: 1.1;
-	color: #fde804;
-	transform: translate(-10%, -50%);
-	z-index: 3;
-}
-
-.container {
-	width: 100%;
-	height: 100vh;
-	padding: 60px 0;
-}
-
 .pagesWrapper {
 	position: relative;
 	height: 100vh;

@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
 import { getArticles, getArticleBySlug } from '../../lib/newt'
 import type { Article } from '../../types/article'
 
@@ -10,7 +9,7 @@ export default function Article({ article }: { article: Article }) {
         <title>{article.title}</title>
         <meta name="description" content="投稿詳細ページです" />
       </Head>
-      <main className={styles.main}>
+      <main>
         <h1>{article.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: article.body }} />
       </main>
