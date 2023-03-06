@@ -63,7 +63,6 @@ export default function Header() {
 				</div>
 			</div>
 			</header>
-			<div className={styles.slider}></div>
 		</>
 	)
 }

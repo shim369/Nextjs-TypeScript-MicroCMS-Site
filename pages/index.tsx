@@ -69,7 +69,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 
 	return (
 		<>
-			<div className={styles.wrapper}>
+			<div className="wrapper">
 			<Header />
 			<Layout>
 			<section id="a01">

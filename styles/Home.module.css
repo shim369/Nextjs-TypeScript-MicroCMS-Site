@@ -28,3 +28,7 @@
 .page p {
 	line-height: 2.5;
 }
+
+.page a {
+	color: #fff;
+}
