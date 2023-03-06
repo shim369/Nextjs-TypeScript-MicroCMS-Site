@@ -5,7 +5,7 @@ type Props = {
 	children?: React.ReactNode
 }
 export default function Contents({ children }: Props) {
-	const title = "Vercel deploy test"
+	const title = "NEXT BASE"
 	return (
 		<>
 			<Head>
