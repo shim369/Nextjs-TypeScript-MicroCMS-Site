@@ -40,7 +40,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 					duration: 1.2
 				}),
 				onLeave: () => gsap.to('#a03', {
-					backgroundColor: '#30CFD0',
+					backgroundColor: '#161515',
 					duration: 1.2
 				}),
 				onEnterBack: () => gsap.to('#a03', {
@@ -48,7 +48,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 					duration: 1.2
 				}),
 				onLeaveBack: () => gsap.to('#a03', {
-					backgroundColor: '#30CFD0',
+					backgroundColor: '#161515',
 					duration: 1.2
 				}),
 			},
@@ -116,16 +116,16 @@ export default function Home({ articles }: { articles: Article[] }) {
 					)
 				})}
 					<div className={styles.page}>
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos maxime dicta necessitatibus nulla, quos numquam quae. Maiores ex, deserunt tempore harum non similique. Praesentium perferendis iste saepe et, doloribus consequatur?</p>
+					<Link href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore, ad dignissimos, animi quo voluptatem eius dolore veniam corrupti ea maxime sit quidem voluptatibus cumque veritatis impedit placeat suscipit modi!</Link>
 					</div>
 					<div className={styles.page}>
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos maxime dicta necessitatibus nulla, quos numquam quae. Maiores ex, deserunt tempore harum non similique. Praesentium perferendis iste saepe et, doloribus consequatur?</p>
+					<Link href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore, ad dignissimos, animi quo voluptatem eius dolore veniam corrupti ea maxime sit quidem voluptatibus cumque veritatis impedit placeat suscipit modi!</Link>
 					</div>
 					<div className={styles.page}>
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos maxime dicta necessitatibus nulla, quos numquam quae. Maiores ex, deserunt tempore harum non similique. Praesentium perferendis iste saepe et, doloribus consequatur?</p>
+					<Link href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore, ad dignissimos, animi quo voluptatem eius dolore veniam corrupti ea maxime sit quidem voluptatibus cumque veritatis impedit placeat suscipit modi!</Link>
 					</div>
 					<div className={styles.page}>
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos maxime dicta necessitatibus nulla, quos numquam quae. Maiores ex, deserunt tempore harum non similique. Praesentium perferendis iste saepe et, doloribus consequatur?</p>
+					<Link href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore, ad dignissimos, animi quo voluptatem eius dolore veniam corrupti ea maxime sit quidem voluptatibus cumque veritatis impedit placeat suscipit modi!</Link>
 					</div>
 				</div>
 				</div>
@@ -134,6 +134,15 @@ export default function Home({ articles }: { articles: Article[] }) {
 			</section>
 			<section className="contact" id="a04">
 				<h2>Contact</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<form className="form-box" action="" method="post">
+					<div className="form-item">
+						<input type="text" placeholder="Subject" />
+						<input type="text" placeholder="E-mail" />
+						<textarea name="message" placeholder="Message"></textarea>
+					</div>
+				</form>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<div className="btn-area">
 					<a href="" className="btn-b">
 						<div className="link-name">
@@ -149,8 +158,6 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<div className="contact-logo">
 					NEXT BASE
 				</div>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 			</section>
 			</Layout>
 			</div>

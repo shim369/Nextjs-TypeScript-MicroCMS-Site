@@ -1,64 +1,111 @@
 @charset "utf-8";
 @import '_common';
 
-main {
-	.flex-box {
-		width: 100%;
-		display: flex;
-		justify-content: space-around;
+.flex-box {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	@media (max-width: 800px) {
+		flex-direction: column;
+	}
+	&.fb2 {
+		flex-direction: row-reverse;
 		@media (max-width: 800px) {
 			flex-direction: column;
 		}
-		&.fb2 {
-			flex-direction: row-reverse;
-			@media (max-width: 800px) {
-				flex-direction: column;
-			}
+	}
+	.fb-image {
+		width: 48%;
+		height: 500px;
+		@media (max-width: 800px) {
+			width: 100%;
+			margin-bottom: 30px;
 		}
-		.fb-image {
-			width: 48%;
-			height: 500px;
-			@media (max-width: 800px) {
-				width: 100%;
-				margin-bottom: 30px;
-			}
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
-		.fb-text {
-			width: 48%;
-			@media (max-width: 800px) {
-				width: 100%;
-			}
+	}
+	.fb-text {
+		width: 48%;
+		@media (max-width: 800px) {
+			width: 100%;
 		}
-		h3 {
-			font-size: 3em;
+	}
+	h3 {
+		font-size: 3em;
+		margin-bottom: 15px;
+	}
+	p {
+		line-height: 1.3em;
+		font-size: 1.2em;
+		margin-bottom: 15px;
+	}
+}
+
+.blog-area {
+	display: flex;
+	justify-content: space-around;
+	.blog-item {
+		width: 30%;
+		img {
+			width: 100%;
+			height: 200px;
 			margin-bottom: 15px;
 		}
 		p {
 			margin-bottom: 15px;
 		}
+		h4 {
+			font-size: 2em;
+			margin-bottom: 15px;
+		}
 	}
-	.blog-area {
+}
+
+.contact {
+	text-align: center;
+	p {
+		margin: 5px 0;
+	}
+	.btn-area {
 		display: flex;
-		justify-content: space-around;
-		.blog-item {
-			width: 30%;
-			img {
+		justify-content: center;
+		margin-top: 40px;
+		margin-bottom: 60px;
+	}
+	.form-box {
+		max-width: 500px;
+		margin: 40px auto;
+		.form-item {
+			width: 100%;
+			input {
+				color: #161719;
+				background: #3d3d3d;
+				font-size: 15px;
+				transition: all .3s;
+				padding: 13px;
 				width: 100%;
-				height: 200px;
-				margin-bottom: 15px;
+				border: none;
+				margin-bottom: 20px;
+				font-weight: normal;
 			}
-			p {
-				margin-bottom: 15px;
-			}
-			h4 {
-				font-size: 2em;
-				margin-bottom: 15px;
+			textarea {
+				color: #161719;
+				background: #3d3d3d;
+				font-size: 15px;
+				transition: all .3s;
+				padding: 13px;
+				width: 100%;
+				border: none;
+				min-height: 150px;
+				font-weight: normal;
 			}
 		}
+	}
+	.contact-logo {
+		margin: 60px 0 0;
+		font-size: 2em;
 	}
 }

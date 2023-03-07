@@ -16,13 +16,13 @@
 .page {
 	width: 400px;
 	margin: 30px;
-	background: #30CFD0;
+	background: #161515;
 	height: 400px;
 	padding: 30px;
 	color: #fff;
 	display: flex;
 	align-items: center;
-	box-shadow: rgb(50 50 93 / 10%) 0px 13px 27px -5px, rgb(0 0 0 / 10%) 0px 8px 16px -8px;
+	/* box-shadow: rgb(50 50 93 / 10%) 0px 13px 27px -5px, rgb(0 0 0 / 10%) 0px 8px 16px -8px; */
 }
 
 .page p {
