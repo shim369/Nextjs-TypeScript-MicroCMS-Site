@@ -72,15 +72,16 @@
 	.btn-area {
 		display: flex;
 		justify-content: center;
-		margin-top: 40px;
+		align-items: center;
+		margin-top: 60px;
 		margin-bottom: 60px;
 		@media (max-width: 800px) {
 			flex-direction: column;
 		}
 	}
 	.form-box {
-		max-width: 500px;
-		margin: 40px auto;
+		max-width: 600px;
+		margin: 40px auto 60px;
 		.form-item {
 			width: 100%;
 			input {
@@ -108,7 +109,7 @@
 		}
 	}
 	.contact-logo {
-		margin: 60px 0 0;
+		margin: 30px 0 0;
 		font-size: 2em;
 	}
 }

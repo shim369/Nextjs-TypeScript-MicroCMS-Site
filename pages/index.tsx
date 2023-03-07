@@ -142,19 +142,19 @@ export default function Home({ articles }: { articles: Article[] }) {
 						<textarea name="message" placeholder="Message"></textarea>
 					</div>
 				</form>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<div className="btn-area">
-					<a href="" className="btn-b">
+					<a href="" target="_blank" className="btn-b">
 						<div className="link-name">
-							<span>LINK1</span>
+							<span>NUXT BASE</span>
 						</div>
 					</a>
-					<a href="" className="btn-b">
+					<a href="https://astro-blog-test-neon.vercel.app/" target="_blank" className="btn-b">
 						<div className="link-name">
-							<span>LINK2</span>
+							<span>ASTRO BASE</span>
 						</div>
 					</a>
 				</div>
+				<p>Lorem ipsum dolor sit amet consectetur.</p>
 				<div className="contact-logo">
 					NEXT BASE
 				</div>
