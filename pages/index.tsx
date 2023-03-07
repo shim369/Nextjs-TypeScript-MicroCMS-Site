@@ -7,11 +7,11 @@ import { getArticles } from '../lib/newt'
 import type { Article } from '../types/article'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { Montserrat } from '@next/font/google'
-const montserrat = Montserrat({
-  variable: '--mnter-font',
-  subsets: ['latin'],
-})
+// import { Montserrat } from '@next/font/google'
+// const montserrat = Montserrat({
+//   variable: '--mnter-font',
+//   subsets: ['latin'],
+// })
 
 export default function Home({ articles }: { articles: Article[] }) {
 	gsap.registerPlugin(ScrollTrigger)
