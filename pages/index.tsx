@@ -123,23 +123,17 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<div className={styles.pages} ref={pagesRef} id="pages">
 				{articles.map((article) => {
 					return (
-						<div key={article._id} className={styles.page}>
-						<Link href={`articles/${article.slug}`}>{article.title}</Link>
-						</div>
+						<Link key={article._id} href={`articles/${article.slug}`}>
+							<div className={styles.page}>
+							<img
+								src={article.coverImage.src}
+								alt="NEXT BASE"
+							/>
+							<p>{article.title}</p>
+							</div>
+						</Link>
 					)
 				})}
-					<div className={styles.page}>
-					<Link href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore, ad dignissimos, animi quo voluptatem eius dolore veniam corrupti ea maxime sit quidem voluptatibus cumque veritatis impedit placeat suscipit modi!</Link>
-					</div>
-					<div className={styles.page}>
-					<Link href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore, ad dignissimos, animi quo voluptatem eius dolore veniam corrupti ea maxime sit quidem voluptatibus cumque veritatis impedit placeat suscipit modi!</Link>
-					</div>
-					<div className={styles.page}>
-					<Link href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore, ad dignissimos, animi quo voluptatem eius dolore veniam corrupti ea maxime sit quidem voluptatibus cumque veritatis impedit placeat suscipit modi!</Link>
-					</div>
-					<div className={styles.page}>
-					<Link href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque inventore, ad dignissimos, animi quo voluptatem eius dolore veniam corrupti ea maxime sit quidem voluptatibus cumque veritatis impedit placeat suscipit modi!</Link>
-					</div>
 				</div>
 				</div>
 				</div>
