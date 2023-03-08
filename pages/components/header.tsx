@@ -60,8 +60,8 @@ export default function Header() {
 					<Image
 					src="/img/index-hero.jpg"
 					alt="NEXT BASE"
-					width={1300}
-					height={500}
+					width={1135}
+					height={550}
 					priority={true}
 					/>
 				</div>
