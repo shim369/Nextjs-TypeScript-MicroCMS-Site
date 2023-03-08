@@ -1,9 +1,12 @@
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-
-
+import React, { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { Inter } from '@next/font/google'
+const inter = Inter({ 
+	variable: "--inter-font",
+	subsets: ['latin'] 
+})
 export default function Header() {
 	// const title = "Vercel deploy test"
 	// const ref = React.useRef(null)
@@ -35,7 +38,6 @@ export default function Header() {
 	// 	})
 	// })
 	return (
-		<>
 			<header>
 			<div className="header-inner">
 				<div className="logo"><a href="./">NEXT<br />BASE</a></div>
@@ -62,7 +64,6 @@ export default function Header() {
 					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, hic!Lorem ipsum dolor sit amet consectetur.</p>
 				</div>
 			</div>
-			</header>
-		</>
+		</header>
 	)
 }

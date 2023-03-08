@@ -7,7 +7,6 @@
 	box-sizing: border-box;
 	font-weight: 500;
 	word-break: break-all;
-	font-family: 'Montserrat', sans-serif;
 }
 
 ul {
@@ -25,7 +24,7 @@ h2 {
 	font-weight: 700;
 }
 h3 {
-	font-weight: 500;
+	font-weight: 600;
 }
 h4 {
 	font-weight: 400;
@@ -38,7 +37,6 @@ html {
 body {
 	background: #161515;
 	color: #fff;
-	font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
@@ -93,8 +91,9 @@ header {
 		position: absolute;
 		z-index: 3;
 		left: 0;
-		background: #01b5a4;
+		background: #01b5a3e8;
 		line-height: 1;
+		font-family: var(--inter-font);
 		a {
 			font-size: 3em;
 			font-weight: 500;
@@ -102,7 +101,7 @@ header {
 			color: #fff;
 			padding: 40px;
 			transition: all .8s ease;
-			line-height: 1.1em;
+			line-height: 1;
 			@media (max-width: 800px) {
 				font-size: 2.5em;
 				padding: 15px;
@@ -182,6 +181,7 @@ header {
 				text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
 				line-height: 1;
 				font-weight: 900;
+				font-family: var(--mnter-font);
 				@media (max-width: 800px) {
 					font-size: 3em;
 				}
@@ -210,6 +210,7 @@ header {
 				font-size: 1.3em;
 				margin-bottom: 10px;
 				font-weight: 500;
+				font-family: var(--mnter-font);
 			}
 			p {
 				font-size: 1em;
@@ -234,6 +235,7 @@ section {
 		text-align: center;
 		font-size: 4em;
 		margin: 0 0 50px;
+		font-family: var(--mnter-font);
 	}
 }
 
