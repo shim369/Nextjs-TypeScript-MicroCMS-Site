@@ -236,6 +236,9 @@ section {
 		font-size: 4em;
 		margin: 0 0 50px;
 		font-family: var(--mnter-font);
+		@media (max-width: 800px) {
+			font-size: 2.5em;
+		}
 	}
 }
 
