@@ -12,7 +12,7 @@ export const getArticles = async () => {
     appUid: 'blog',
     modelUid: 'article',
     query: {
-      select: ['_id', 'title', 'slug', 'body'],
+      select: ['_id', 'title', 'slug', 'body', 'category', 'date'],
     },
   })
   return items
@@ -24,7 +24,7 @@ export const getArticleBySlug = async (slug: string) => {
     modelUid: 'article',
     query: {
       slug,
-      select: ['_id', 'title', 'slug', 'body'],
+      select: ['_id', 'title', 'slug', 'body', 'category', 'date'],
     },
   })
   return article

@@ -3,4 +3,8 @@ export interface Article {
     title: string
     slug: string
     body: string
+	category: {
+		name: string
+	}
+	date: Date
 }

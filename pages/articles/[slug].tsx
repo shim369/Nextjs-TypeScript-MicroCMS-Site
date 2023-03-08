@@ -1,18 +1,28 @@
-import Head from 'next/head'
+import Image from 'next/image'
+import Layout from '../components/layout'
+import Header from '../components/header'
 import { getArticles, getArticleBySlug } from '../../lib/newt'
 import type { Article } from '../../types/article'
 
 export default function Article({ article }: { article: Article }) {
+
   return (
     <>
-      <Head>
-        <title>{article.title}</title>
-        <meta name="description" content="投稿詳細ページです" />
-      </Head>
-      <main>
-        <h1>{article.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: article.body }} />
-      </main>
+			<div className="wrapper">
+			<Header />
+			<Layout>
+				<section>
+				<h2>{article.category.name} Blog</h2>
+				<hr />
+				<div className="blog-content">
+          <h1>{article.title}</h1>
+					{/* <div className="date"><span className="material-symbols-outlined">schedule</span>{article.date}</div> */}
+          <div dangerouslySetInnerHTML={{ __html: article.body }} />  
+				</div>
+				<hr />
+				</section>
+			</Layout>
+			</div>
     </>
   )
 }

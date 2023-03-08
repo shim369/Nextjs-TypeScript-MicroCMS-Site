@@ -43,11 +43,11 @@ export default function Header() {
 				<div className="logo"><a href="./">NEXT<br />BASE</a></div>
 				<nav>
 					<ul>
-						<li><a href="./#top">Home</a></li>
-						<li><a href="./#a01">Profile</a></li>
-						<li><a href="./#a02">Skills</a></li>
-						<li><a href="./#a03">Blog</a></li>
-						<li><a href="./#a04">Contact</a></li>
+						<li><a href="/#top">Home</a></li>
+						<li><a href="/#a01">Profile</a></li>
+						<li><a href="/#a02">Skills</a></li>
+						<li><a href="/#a03">Blog</a></li>
+						<li><a href="/#a04">Contact</a></li>
 					</ul>
 				</nav>
 			</div>
