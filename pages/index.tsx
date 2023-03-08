@@ -80,7 +80,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 					<Image
 						src="/img/image5.jpg"
 						alt="NEXT BASE"
-						width={500}
+						width={650}
 						height={500}
 					/>
 					</div>
@@ -101,7 +101,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 						<Image
 							src="/img/image1.jpg"
 							alt="NEXT BASE"
-							width={500}
+							width={650}
 							height={500}
 						/>
 					</div>
@@ -117,6 +117,8 @@ export default function Home({ articles }: { articles: Article[] }) {
 			<section id="a03">
 				<div className="horizontal">
 				<div className={styles.container}>
+				<h2>Blog</h2>
+				<p className="read">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<div className={styles.pagesWrapper} ref={pagesWrapperRef}>
 				<div className={styles.pages} ref={pagesRef} id="pages">
 				{articles.map((article) => {

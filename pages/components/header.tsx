@@ -62,6 +62,7 @@ export default function Header() {
 					alt="NEXT BASE"
 					width={1300}
 					height={500}
+					priority={true}
 					/>
 				</div>
 				<div className="catch2">
