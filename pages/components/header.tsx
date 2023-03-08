@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
@@ -40,14 +41,14 @@ export default function Header() {
 	return (
 			<header>
 			<div className="header-inner">
-				<div className="logo"><a href="./">NEXT<br />BASE</a></div>
+				<div className="logo"><Link href="./">NEXT<br />BASE</Link></div>
 				<nav>
 					<ul>
-						<li><a href="/#top">Home</a></li>
-						<li><a href="/#a01">Profile</a></li>
-						<li><a href="/#a02">Skills</a></li>
-						<li><a href="/#a03">Blog</a></li>
-						<li><a href="/#a04">Contact</a></li>
+						<li><Link href="/#top">Home</Link></li>
+						<li><Link href="/#a01">Profile</Link></li>
+						<li><Link href="/#a02">Skills</Link></li>
+						<li><Link href="/#a03">Blog</Link></li>
+						<li><Link href="/#a04">Contact</Link></li>
 					</ul>
 				</nav>
 			</div>
