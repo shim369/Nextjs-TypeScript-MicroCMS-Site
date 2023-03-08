@@ -171,17 +171,16 @@
 				margin-bottom: 20px;
 			}
 			button {
-				display: inline-block;
-				padding: 15px 2vw;
-				border: none;
 				color: #fff;
+				border: solid 1px #fff;
+				padding: 10px 20px;
+				margin-top: 20px;
+				display: inline-block;
 				transition: all .8s ease;
-				font-size: 15px;
-				font-weight: 600;
-				cursor: pointer;
-				background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
+				background: transparent;
 				&:hover {
-					background-image: linear-gradient(to left top, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
+					border: solid 1px #e3281f;
+					background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
 				}
 			}
 		}
