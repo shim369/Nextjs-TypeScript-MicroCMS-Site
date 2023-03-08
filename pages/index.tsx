@@ -37,7 +37,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 				end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth + 50}`,
 				scrub: true, 
 				onEnter: () => gsap.to('#a03', {
-					backgroundColor: '#bbb',
+					backgroundColor: '#818181',
 					duration: 1.2
 				}),
 				onLeave: () => gsap.to('#a03', {
@@ -45,7 +45,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 					duration: 1.2
 				}),
 				onEnterBack: () => gsap.to('#a03', {
-					backgroundColor: '#bbb',
+					backgroundColor: '#818181',
 					duration: 1.2
 				}),
 				onLeaveBack: () => gsap.to('#a03', {
