@@ -57,7 +57,12 @@ export default function Header() {
 					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
 				</div>
 				<div className="hero">
-					<img src="img/index-hero.jpg" alt="" />
+					<Image
+					src="/img/index-hero.jpg"
+					alt="NEXT BASE"
+					width={1300}
+					height={500}
+					/>
 				</div>
 				<div className="catch2">
 					<h2>Lorem ipsum dolor sit.</h2>

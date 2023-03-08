@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Layout from './components/layout'
 import Header from './components/header'
 import React, { useRef, useEffect } from 'react'
@@ -7,12 +8,6 @@ import { getArticles } from '../lib/newt'
 import type { Article } from '../types/article'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-
-// import { Montserrat } from '@next/font/google'
-// const montserrat = Montserrat({
-//   variable: '--mnter-font',
-//   subsets: ['latin'],
-// })
 
 export default function Home({ articles }: { articles: Article[] }) {
 	gsap.registerPlugin(ScrollTrigger)
@@ -82,7 +77,12 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<h2>Profile</h2>
 				<div className="flex-box fb2">
 					<div className="fb-image">
-						<img src="img/image5.jpg" alt="" />
+					<Image
+						src="/img/image5.jpg"
+						alt="NEXT BASE"
+						width={500}
+						height={500}
+					/>
 					</div>
 					<div className="fb-text">
 						<p>Lorem ipsum dolor</p>
@@ -98,7 +98,12 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<h2>Skills</h2>
 				<div className="flex-box fb1">
 					<div className="fb-image">
-						<img src="img/image1.jpg" alt="" />
+						<Image
+							src="/img/image1.jpg"
+							alt="NEXT BASE"
+							width={500}
+							height={500}
+						/>
 					</div>
 					<div className="fb-text">
 						<p>Lorem ipsum dolor</p>
