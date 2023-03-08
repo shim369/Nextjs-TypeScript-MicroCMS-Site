@@ -154,12 +154,12 @@ export default function Home({ articles }: { articles: Article[] }) {
 					</div>
 				</form>
 				<div className="btn-area">
-					<a href="" target="_blank" className="btn-b">
+					<a href="" target="_blank" rel="noreferrer" className="btn-b">
 						<div className="link-name">
 							<span>NUXT BASE</span>
 						</div>
 					</a>
-					<a href="https://astro-blog-test-neon.vercel.app/" target="_blank" className="btn-b">
+					<a href="https://astro-blog-test-neon.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 						<div className="link-name">
 							<span>ASTRO BASE</span>
 						</div>
