@@ -116,15 +116,15 @@ export default function Home({ articles }: { articles: Article[] }) {
 			</section>
 			<section id="a03">
 				<div className="horizontal">
-				<div className={styles.container}>
+				<div>
 				<h2>Blog</h2>
 				<p className="read">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-				<div className={styles.pagesWrapper} ref={pagesWrapperRef}>
-				<div className={styles.pages} ref={pagesRef} id="pages">
+				<div className="pagesWrapper" ref={pagesWrapperRef}>
+				<div className="pages" ref={pagesRef} id="pages">
 				{articles.map((article) => {
 					return (
 						<Link key={article._id} href={`articles/${article.slug}`}>
-							<div className={styles.page}>
+							<div className="page">
 							<img
 								src={article.coverImage.src}
 								alt="NEXT BASE"
