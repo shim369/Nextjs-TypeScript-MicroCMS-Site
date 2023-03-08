@@ -178,6 +178,7 @@
 				display: inline-block;
 				transition: all .8s ease;
 				background: transparent;
+				cursor: pointer;
 				&:hover {
 					border: solid 1px #e3281f;
 					background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
