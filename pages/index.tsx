@@ -80,8 +80,8 @@ export default function Home({ articles }: { articles: Article[] }) {
 					<Image
 						src="/img/image5.jpg"
 						alt="NEXT BASE"
-						width={650}
-						height={500}
+						width={672}
+						height={504}
 					/>
 					</div>
 					<div className="fb-text">
@@ -101,8 +101,8 @@ export default function Home({ articles }: { articles: Article[] }) {
 						<Image
 							src="/img/image1.jpg"
 							alt="NEXT BASE"
-							width={650}
-							height={500}
+							width={672}
+							height={504}
 						/>
 					</div>
 					<div className="fb-text">
