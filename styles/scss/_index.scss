@@ -148,7 +148,7 @@
 		.form-item {
 			width: 100%;
 			input {
-				color: #161719;
+				color: #fff;
 				background: #3d3d3d;
 				font-size: 15px;
 				transition: all .3s;
@@ -159,7 +159,7 @@
 				font-weight: normal;
 			}
 			textarea {
-				color: #161719;
+				color: #fff;
 				background: #3d3d3d;
 				font-size: 15px;
 				transition: all .3s;
@@ -168,6 +168,21 @@
 				border: none;
 				min-height: 150px;
 				font-weight: normal;
+				margin-bottom: 20px;
+			}
+			button {
+				display: inline-block;
+				padding: 15px 2vw;
+				border: none;
+				color: #fff;
+				transition: all .8s ease;
+				font-size: 15px;
+				font-weight: 600;
+				cursor: pointer;
+				background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
+				&:hover {
+					background-image: linear-gradient(to left top, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
+				}
 			}
 		}
 	}

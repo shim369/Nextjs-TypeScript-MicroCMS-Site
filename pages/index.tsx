@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Layout from './components/layout'
 import Header from './components/header'
+import Contact from './components/contact'
 import React, { useRef, useEffect } from 'react'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
@@ -142,13 +143,14 @@ export default function Home({ articles }: { articles: Article[] }) {
 			<section className="contact" id="a04">
 				<h2>Contact</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-				<form className="form-box" action="" method="post">
+				<Contact />
+				{/* <form className="form-box" action="" method="post">
 					<div className="form-item">
 						<input type="text" placeholder="Subject" />
 						<input type="text" placeholder="E-mail" />
 						<textarea name="message" placeholder="Message"></textarea>
 					</div>
-				</form>
+				</form> */}
 				<div className="btn-area">
 					<a href="" target="_blank" rel="noreferrer" className="btn-b">
 						<div className="link-name">
