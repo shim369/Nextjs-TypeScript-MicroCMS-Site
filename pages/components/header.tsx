@@ -41,7 +41,7 @@ export default function Header() {
 	return (
 			<header>
 			<div className="header-inner">
-				<div className="logo"><Link href="./">NEXT<br />BASE</Link></div>
+				<div className="logo"><Link href="/">NEXT<br />BASE</Link></div>
 				<nav>
 					<ul>
 						<li><Link href="/#top">Home</Link></li>
