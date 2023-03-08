@@ -123,17 +123,19 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<div className="pagesWrapper" ref={pagesWrapperRef}>
 				<div className="pages" ref={pagesRef} id="pages">
 				{articles.map((article) => {
-					return (
-						<Link key={article._id} href={`articles/${article.slug}`}>
-							<div className="page">
-							<img
-								src={article.coverImage.src}
-								alt="NEXT BASE"
-							/>
-							<p>{article.title}</p>
-							</div>
-						</Link>
-					)
+					if(article.category.name == "Next"){
+						return (
+							<Link key={article._id} href={`articles/${article.slug}`}>
+								<div className="page">
+								<img
+									src={article.coverImage.src}
+									alt="NEXT BASE"
+								/>
+								<p>{article.title}</p>
+								</div>
+							</Link>
+						)
+					}
 				})}
 				</div>
 				</div>
