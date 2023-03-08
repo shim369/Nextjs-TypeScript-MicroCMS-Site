@@ -44,8 +44,7 @@ export default function Header() {
 				<div className="logo"><Link href="/">NEXT<br />BASE</Link></div>
 				<nav>
 					<ul>
-						<li><Link href="/#top">Home</Link></li>
-						<li><Link href="/#a01">Profile</Link></li>
+						<li><Link href="/#a01">About</Link></li>
 						<li><Link href="/#a02">Skills</Link></li>
 						<li><Link href="/#a03">Blog</Link></li>
 						<li><Link href="/#a04">Contact</Link></li>

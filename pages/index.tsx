@@ -75,7 +75,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 			<Header />
 			<Layout>
 			<section id="a01">
-				<h2>Profile</h2>
+				<h2>About</h2>
 				<div className="flex-box fb2">
 					<div className="fb-image">
 					<Image
@@ -144,13 +144,6 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<h2>Contact</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<Contact />
-				{/* <form className="form-box" action="" method="post">
-					<div className="form-item">
-						<input type="text" placeholder="Subject" />
-						<input type="text" placeholder="E-mail" />
-						<textarea name="message" placeholder="Message"></textarea>
-					</div>
-				</form> */}
 				<div className="btn-area">
 					<a href="" target="_blank" rel="noreferrer" className="btn-b">
 						<div className="link-name">
