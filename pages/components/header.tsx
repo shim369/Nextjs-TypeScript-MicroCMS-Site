@@ -58,7 +58,7 @@ export default function Header() {
 				</div>
 				<div className="hero">
 					<Image
-					src="/img/index-hero.jpg"
+					src="/img/index-hero.webp"
 					alt="NEXT BASE"
 					width={1135}
 					height={550}

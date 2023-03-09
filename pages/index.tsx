@@ -83,7 +83,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<div className="flex-box fb2">
 					<div className="fb-image">
 					<Image
-						src="/img/image5.jpg"
+						src="/img/image5.webp"
 						alt="NEXT BASE"
 						width={672}
 						height={504}
@@ -104,7 +104,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<div className="flex-box fb1">
 					<div className="fb-image">
 						<Image
-							src="/img/image1.jpg"
+							src="/img/image1.webp"
 							alt="NEXT BASE"
 							width={672}
 							height={504}
