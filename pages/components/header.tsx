@@ -38,6 +38,19 @@ export default function Header() {
 	// 		duration: 3,
 	// 	})
 	// })
+
+	let headerInner: HTMLElement
+	
+	useEffect(() => {
+		headerInner = document.querySelector(".header-inner")!;
+		window.addEventListener("scroll", () => {
+			if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+				headerInner.classList.add("active");
+			} else {
+				headerInner.classList.remove("active");
+			}
+		})
+	})
 	return (
 			<header>
 			<div className="header-inner">
