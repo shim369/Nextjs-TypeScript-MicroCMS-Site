@@ -60,11 +60,18 @@ header {
 		z-index: 100;
 		&.active {
 			position: fixed;
+			@media (max-width: 800px) {
+				position: absolute;
+			}
 			.logo {
 				background: #01b5a4ba;
 				a {
-					font-size: 1em;
-					padding: 30px;
+					font-size: 1.6em;
+					padding: 20px 12px;
+					// @media (max-width: 800px) {
+					// 	font-size: 1.2em;
+					// 	padding: 20px 12px;
+					// }
 				}
 			}
 			nav {
@@ -103,13 +110,13 @@ header {
 			font-weight: 500;
 			display: block;
 			color: #fff;
-			padding: 50px 40px;
+			padding: 45px 35px;
 			transition: all .8s ease;
 			line-height: 1;
 			font-family: var(--inter-font);
 			@media (max-width: 800px) {
-				font-size: 2em;
-				padding: 25px 15px;
+				font-size: 1.6em;
+				padding: 20px 12px;
 			}
 		}
 	}
