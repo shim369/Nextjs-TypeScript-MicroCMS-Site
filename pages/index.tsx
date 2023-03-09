@@ -4,7 +4,6 @@ import Header from './components/header'
 import Contact from './components/contact'
 import React, { useRef, useEffect } from 'react'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
 import { getArticles } from '../lib/newt'
 import type { Article } from '../types/article'
 import { gsap } from 'gsap'
@@ -16,8 +15,9 @@ export default function Home({ articles }: { articles: Article[] }) {
 	const pagesWrapperRef = useRef<HTMLDivElement | null >(null);
 	const pagesRef = useRef<HTMLDivElement | null >(null);
 	const didEffect = React.useRef(false);
+	let a03: HTMLElement
   
-	const setupGsap = (pagesElement: HTMLDivElement, pagesWrapperElement: HTMLDivElement) => {
+	const setupGsap = (pagesElement: HTMLDivElement, pagesWrapperElement: HTMLDivElement, a03: HTMLElement) => {
 		gsap.to(pagesElement, {
 			x: () => -(pagesElement.clientWidth - pagesWrapperElement.clientWidth),
 			ease: 'none',
@@ -31,34 +31,38 @@ export default function Home({ articles }: { articles: Article[] }) {
 				invalidateOnRefresh: true,
 			},
 		})
-		gsap.to('#a03', {
-			scrollTrigger: {
-				trigger: '.horizontal',
-				start: 'top center',
-				end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth + 50}`,
-				scrub: true, 
-				onEnter: () => gsap.to('#a03', {
-					backgroundColor: '#818181',
-					duration: 1.2
-				}),
-				onLeave: () => gsap.to('#a03', {
-					backgroundColor: '#161515',
-					duration: 1.2
-				}),
-				onEnterBack: () => gsap.to('#a03', {
-					backgroundColor: '#818181',
-					duration: 1.2
-				}),
-				onLeaveBack: () => gsap.to('#a03', {
-					backgroundColor: '#161515',
-					duration: 1.2
-				}),
-			},
-		})
+		if(a03) {
+			gsap.to(a03, {
+				scrollTrigger: {
+					trigger: '.horizontal',
+					start: 'top center',
+					end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth + 50}`,
+					scrub: true, 
+					onEnter: () => gsap.to(a03, {
+						backgroundColor: '#818181',
+						duration: 1.2
+					}),
+					onLeave: () => gsap.to(a03, {
+						backgroundColor: '#161515',
+						duration: 1.2
+					}),
+					onEnterBack: () => gsap.to(a03, {
+						backgroundColor: '#818181',
+						duration: 1.2
+					}),
+					onLeaveBack: () => gsap.to(a03, {
+						backgroundColor: '#161515',
+						duration: 1.2
+					}),
+				},
+			})
+		}
 	}
   
 
 	useEffect(() => {
+		if (a03) return
+		a03 = document.getElementById('a03')!;
 		if (didEffect.current) return 
 		didEffect.current = true;
 		const pagesElement = pagesRef?.current;
@@ -66,7 +70,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 		
 		const pagesWrapperElement = pagesWrapperRef?.current;
 		if(!pagesWrapperElement) return
-		setupGsap(pagesElement, pagesWrapperElement)
+		setupGsap(pagesElement, pagesWrapperElement, a03)
 	}, [])
 
 	return (
