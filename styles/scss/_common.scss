@@ -70,7 +70,7 @@ header {
 					padding: 20px 12px;
 				}
 			}
-			nav {
+			.pc-nav {
 				ul {
 					li {
 						a {
@@ -118,7 +118,7 @@ header {
 			}
 		}
 	}
-	nav {
+	.pc-nav {
 		position: absolute;
 		right: 0;
 		z-index: 5;
@@ -226,6 +226,95 @@ header {
 			p {
 				font-size: 1em;
 				line-height: 1.2em;
+			}
+		}
+	}
+}
+
+
+.sp-nav-area {
+	position: relative;
+	color: #fff;
+	display: none;
+	width: 100%;
+	@media (max-width: 800px) {
+		display: block;
+	}
+	.header-lists {
+		position: absolute;
+		@media (max-width: 800px) {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+		li {
+			margin-bottom: 20px;
+			a {
+				color: #fff;
+				font-size: 1.5em;
+			}
+		}
+	}
+}
+
+.sp-nav-btn {
+    position: fixed;
+	top: 0;
+	right: 0;
+	background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
+	padding: 10px;
+	cursor: pointer;
+	.material-icons {
+		&.menu-icon {
+			display: block;
+		}
+		&.close-icon {
+			display: none;
+		}
+	}
+}
+
+.sp-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all .5s ease;
+}
+
+.side-open {
+	header .header-inner.active .logo a {
+			background: transparent;
+	}
+	.sp-nav-area {
+		display: block;
+		height: 100%;
+		.sp-nav {
+			visibility: visible;
+			opacity: 1;
+		}
+		.sp-nav-btn {
+			background: transparent;
+			z-index: 999;
+			.material-icons {
+				&.menu-icon {
+					display: none;
+				}
+				&.close-icon {
+					display: block;
+				}
 			}
 		}
 	}

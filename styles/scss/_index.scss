@@ -34,6 +34,9 @@
 		font-size: 3em;
 		margin-bottom: 15px;
 		font-family: var(--mnter-font);
+		@media (max-width: 800px) {
+			font-size: 2em;
+		}
 	}
 	p {
 		line-height: 1.3em;
