@@ -209,7 +209,7 @@ header {
 			position: absolute;
 			z-index: 4;
 			right: 0;
-			bottom: -50px;
+			bottom: -40px;
 			background: rgb(0 0 0 / 60%);
 			width: 40%;
 			padding: 20px;
@@ -324,8 +324,9 @@ header {
 .container {
 	max-width: 1400px;
 	margin: 0 auto;
+	padding: 0 2%;
 	@media (max-width: 800px) {
-		padding: 4%;
+		padding: 0 4%;
 	}
 }
 
