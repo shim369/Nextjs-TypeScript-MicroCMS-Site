@@ -192,7 +192,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 						</div>
 					</a>
 				</div>
-				<p>Next.js・TypeScript・Newtによるポートフォリオサイト</p>
+        		<p>Next.js & TypeScript & Newt</p>
 				<div className="contact-logo">
 					NEXT BASE
 				</div>

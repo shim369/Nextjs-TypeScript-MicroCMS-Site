@@ -5,7 +5,7 @@ export default function Header() {
     <div className="hero-area">
     <div className="catch1">
         <h1>WEB<br />DEVLOPMENT</h1>
-        <p>Next.js・TypeScript・Newtによるポートフォリオサイト</p>
+        <p>Next.js & TypeScript & Newt</p>
     </div>
     <div className="hero">
         <Image
