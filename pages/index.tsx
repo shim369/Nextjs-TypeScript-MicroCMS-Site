@@ -122,7 +122,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 				<Contact />
 				<div className="btn-area">
-					<a href="" target="_blank" rel="noreferrer" className="btn-b">
+					<a href="https://nuxtjs-type-script-newt.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 						<div className="link-name">
 							<span>NUXT BASE</span>
 						</div>
