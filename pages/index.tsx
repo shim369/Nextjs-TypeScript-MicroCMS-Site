@@ -64,7 +64,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 						<p className='sub-title'>NEXT BASEについて</p>
 						<h2>About NEXT BASE</h2>
 						<p>このサイトはNext.jsとTypeScriptをメインに制作しています。<br />さらにヘッドレスCMS「Newt」を利用し、ブログとお問合せフォームを組み込みしています。<br />ブログの横スクロールはGsapを利用しています。</p>
-						<a href="https://github.com/shim369/Nextjs-TypeScript-Newt-Blog" target="_blank" className="btn-s">Github</a>
+						<Link href="https://github.com/shim369/Nextjs-TypeScript-Newt-Blog" target="_blank" rel="noreferrer" className="btn-s">Github</Link>
 					</div>
 				</div>
 			</section>
@@ -84,7 +84,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 						<p className='sub-title'>スキルについて</p>
 						<h2>My skills</h2>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio adipisci sed repudiandae, sequi minus eligendi alias quod, vero tempore aperiam in omnis unde obcaecati consequuntur suscipit, id quas ut accusamus.</p>
-						<a href="https://github.com/shim369" target="_blank" className="btn-s">Github</a>
+						<Link href="https://github.com/shim369" target="_blank" rel="noreferrer" className="btn-s">Github</Link>
 					</div>
 				</div>
 			</section>
