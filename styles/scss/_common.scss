@@ -74,7 +74,7 @@ header {
 				ul {
 					li {
 						a {
-							padding: 20px 30px;
+							padding: 20px 25px;
 						}
 					}
 				}
@@ -109,9 +109,13 @@ header {
 			display: block;
 			color: #fff;
 			padding: 45px 35px;
-			transition: all .8s ease;
+			transition: all .5s ease;
 			line-height: 1.1;
 			font-family: var(--inter-font);
+			@media (max-width: 1200px) {
+				font-size: 2.5em;
+    			padding: 35px 30px;
+			}
 			@media (max-width: 800px) {
 				font-size: 2em;
     			padding: 25px 15px;
@@ -139,9 +143,9 @@ header {
 				}
 				a {
 					display: block;
-					padding: 35px 3vw;
+					padding: 35px 30px;
 					color: #fff;
-					transition: all .8s ease;
+					transition: all .5s ease;
 					font-size: 1.2em;
     				font-weight: 600;
 					&:hover {
@@ -168,6 +172,11 @@ header {
 			width: 80%;
 			max-width: 1200px;
 			height: 550px;
+			transition: all .5s ease;
+			@media (max-width: 1200px) {
+				height: 75vh;
+				width: 85%;
+			}
 			@media (max-width: 800px) {
 				height: 75vh;
 				width: 92%;
@@ -193,6 +202,9 @@ header {
 				line-height: 1;
 				font-weight: 900;
 				font-family: var(--mnter-font);
+				@media (max-width: 1200px) {
+					font-size: 4.5em;
+				}
 				@media (max-width: 800px) {
 					font-size: 3em;
 				}
@@ -209,23 +221,27 @@ header {
 			position: absolute;
 			z-index: 4;
 			right: 0;
-			bottom: -40px;
+			bottom: -50px;
 			background: rgb(0 0 0 / 60%);
-			width: 40%;
+			width: 38%;
 			padding: 20px;
+			transition: all .5s ease;
+			@media (max-width: 1200px) {
+				width: 60%;
+			}
 			@media (max-width: 800px) {
 				width: 84%;
     			bottom: -50px;
 			}
 			h2 {
-				font-size: 1.3em;
+				font-size: 1.1em;
 				margin-bottom: 10px;
 				font-weight: 500;
 				font-family: var(--mnter-font);
 			}
 			p {
 				font-size: 1em;
-				line-height: 1.2em;
+				line-height: 1.4;
 			}
 		}
 	}
@@ -333,7 +349,7 @@ header {
 section {
 	min-height: 100vh;
 	padding: 80px 0;
-	h2 {
+	h1 {
 		text-align: center;
 		font-size: 4em;
 		margin: 0 0 50px;
@@ -357,7 +373,7 @@ main {
 	padding: 10px 20px;
 	margin-top: 20px;
 	display: inline-block;
-	transition: all .8s ease;
+	transition: all .5s ease;
 	&:hover {
 		border: solid 1px #e3281f;
 		background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
@@ -373,7 +389,7 @@ main {
 	background-attachment: fixed;
 	background-size: cover;
 	margin: 0 20px 40px;
-	transition: all .8s ease;
+	transition: all .5s ease;
 	@media (max-width: 800px) {	
 		width: 80%;
 	}

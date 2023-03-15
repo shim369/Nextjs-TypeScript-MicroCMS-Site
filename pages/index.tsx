@@ -50,7 +50,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 			<Header />
 			<Layout>
 			<section id="a01">
-				<h2>About</h2>
+				<h1>About</h1>
 				<div className="flex-box fb2">
 					<div className="fb-image">
 					<Image
@@ -61,17 +61,16 @@ export default function Home({ articles }: { articles: Article[] }) {
 					/>
 					</div>
 					<div className="fb-text">
-						<p>Lorem ipsum dolor</p>
-						<h3>TITLE</h3>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio adipisci sed repudiandae, sequi minus eligendi alias quod, vero tempore aperiam in omnis unde obcaecati consequuntur suscipit, id quas ut accusamus.</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio adipisci sed repudiandae, sequi minus eligendi alias quod, vero tempore aperiam in omnis unde obcaecati consequuntur suscipit, id quas ut accusamus.</p>
-						<a href="" className="btn-s">Read more</a>
+						<p className='sub-title'>NEXT BASEについて</p>
+						<h2>About NEXT BASE</h2>
+						<p>このサイトはNext.jsとTypeScriptをメインに制作しています。<br />さらにヘッドレスCMS「Newt」を利用し、ブログとお問合せフォームを組み込みしています。<br />ブログの横スクロールはGsapを利用しています。</p>
+						<a href="https://github.com/shim369/Nextjs-TypeScript-Newt-Blog" target="_blank" className="btn-s">Github</a>
 					</div>
 				</div>
 			</section>
 
 			<section id="a02">
-				<h2>Skills</h2>
+				<h1>Skills</h1>
 				<div className="flex-box fb1">
 					<div className="fb-image">
 						<Image
@@ -82,19 +81,18 @@ export default function Home({ articles }: { articles: Article[] }) {
 						/>
 					</div>
 					<div className="fb-text">
-						<p>Lorem ipsum dolor</p>
-						<h3>TITLE</h3>
-						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi odit quia dicta, exercitationem alias, dolor numquam impedit, soluta a totam fuga enim architecto officiis repellendus itaque culpa laboriosam tenetur blanditiis.</p>
+						<p className='sub-title'>スキルについて</p>
+						<h2>My skills</h2>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio adipisci sed repudiandae, sequi minus eligendi alias quod, vero tempore aperiam in omnis unde obcaecati consequuntur suscipit, id quas ut accusamus.</p>
-						<a href="" className="btn-s">Read more</a>
+						<a href="https://github.com/shim369" target="_blank" className="btn-s">Github</a>
 					</div>
 				</div>
 			</section>
 			<section id="a03">
 				<div className="horizontal">
 				<div>
-				<h2>Blog</h2>
-				<p className="read">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<h1>Blog</h1>
+				<p className="read">ヘッドレスCMS「Newt」のブログ機能を組み込み、「Next.js」カテゴリーのみを表示しています。<br />ブログの横スクロールはGsapを利用しています。</p>
 				<div className="pagesWrapper" ref={pagesWrapperRef}>
 				<div className="pages" ref={pagesRef} id="pages">
 				{articles.map((article) => {
@@ -118,8 +116,9 @@ export default function Home({ articles }: { articles: Article[] }) {
 				</div>
 			</section>
 			<section className="contact" id="a04">
-				<h2>Contact</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<h1>Contact</h1>
+				<p>お問い合わせから遅くても数日以内には返信させていただきます。</p>
+				<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
 				<Contact />
 				<div className="btn-area">
 					<a href="https://nuxtjs-type-script-newt.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
@@ -133,7 +132,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 						</div>
 					</a>
 				</div>
-				<p>Lorem ipsum dolor sit amet consectetur.</p>
+				<p>Next.js・TypeScript・Newtによるポートフォリオサイト</p>
 				<div className="contact-logo">
 					NEXT BASE
 				</div>

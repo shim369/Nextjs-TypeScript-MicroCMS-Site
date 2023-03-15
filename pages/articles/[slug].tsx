@@ -11,7 +11,6 @@ export default function Article({ article }: { article: Article }) {
 			<Header />
 			<Layout>
 				<section className="detail-sec">
-				<h2>{article.category.name} Blog</h2>
 				<hr />
 				<div className="blog-content">
           <h1>{article.title}</h1>

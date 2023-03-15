@@ -88,7 +88,7 @@ export default function Header() {
 			<div className="hero-area">
 				<div className="catch1">
 					<h1>WEB<br />DEVLOPMENT</h1>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+					<p>Next.js・TypeScript・Newtによるポートフォリオサイト</p>
 				</div>
 				<div className="hero">
 					<Image
@@ -100,8 +100,8 @@ export default function Header() {
 					/>
 				</div>
 				<div className="catch2">
-					<h2>Lorem ipsum dolor sit.</h2>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, hic!Lorem ipsum dolor sit amet consectetur.</p>
+					<h2>制作依頼について</h2>
+					<p>Contactから制作のご依頼を受け付けておりますので、詳細はお問い合わせください。</p>
 				</div>
 			</div>
 		</header>
