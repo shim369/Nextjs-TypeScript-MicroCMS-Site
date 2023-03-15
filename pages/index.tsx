@@ -71,7 +71,82 @@ export default function Home({ articles }: { articles: Article[] }) {
 
 			<section id="a02">
 				<h1>Skills</h1>
-				<div className="flex-box fb1">
+				<div className="skills-box">
+					<div className="skills-item">
+						<Image
+							src="/img/astro.webp"
+							alt="astro"
+							width={225}
+							height={225}
+						/>
+						<h2>Astro</h2>
+					</div>
+					<div className="skills-item">
+						<Image
+							src="/img/js.webp"
+							alt="js"
+							width={225}
+							height={225}
+						/>
+						<h2>JavaScript</h2>
+					</div>
+					<div className="skills-item">
+						<Image
+							src="/img/next.webp"
+							alt="next.js"
+							width={225}
+							height={225}
+						/>
+						<h2>Next.js</h2>
+					</div>
+					<div className="skills-item">
+						<Image
+							src="/img/nuxt.webp"
+							alt="Nuxt"
+							width={225}
+							height={225}
+						/>
+						<h2>Nuxt.js</h2>
+					</div>
+					<div className="skills-item">
+						<Image
+							src="/img/py.webp"
+							alt="Python"
+							width={225}
+							height={225}
+						/>
+						<h2>Python</h2>
+					</div>
+					<div className="skills-item">
+						<Image
+							src="/img/django.webp"
+							alt="django"
+							width={225}
+							height={225}
+						/>
+						<h2>Django</h2>
+					</div>
+					<div className="skills-item">
+						<Image
+							src="/img/newt.webp"
+							alt="Newt"
+							width={225}
+							height={225}
+						/>
+						<h2>Newt</h2>
+					</div>
+					<div className="skills-item">
+						<Image
+							src="/img/figma.webp"
+							alt="figma"
+							width={225}
+							height={225}
+						/>
+						<h2>Figma</h2>
+					</div>
+				</div>
+						
+					{/* <div className="flex-box fb1">
 					<div className="fb-image">
 						<Image
 							src="/img/image1.webp"
@@ -86,7 +161,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio adipisci sed repudiandae, sequi minus eligendi alias quod, vero tempore aperiam in omnis unde obcaecati consequuntur suscipit, id quas ut accusamus.</p>
 						<Link href="https://github.com/shim369" target="_blank" rel="noreferrer" className="btn-s">Github</Link>
 					</div>
-				</div>
+				</div> */}
 			</section>
 			<section id="a03">
 				<div className="horizontal">
@@ -121,11 +196,11 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
 				<Contact />
 				<div className="btn-area">
-					<a href="https://nuxtjs-type-script-newt.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
+					{/* <a href="https://nuxtjs-type-script-newt.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 						<div className="link-name">
 							<span>NUXT BASE</span>
 						</div>
-					</a>
+					</a> */}
 					<a href="https://astro-blog-test-neon.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 						<div className="link-name">
 							<span>ASTRO BASE</span>
