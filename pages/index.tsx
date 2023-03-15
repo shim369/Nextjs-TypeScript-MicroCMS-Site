@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Layout from './components/layout'
 import Header from './components/header'
+import Herotop from './components/herotop'
 import Contact from './components/contact'
 import React, { useRef, useEffect } from 'react'
 import Link from 'next/link'
@@ -48,6 +49,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 		<>
 			<div className="wrapper">
 			<Header />
+			<Herotop />
 			<Layout>
 			<section id="a01">
 				<h1>About</h1>
@@ -145,23 +147,6 @@ export default function Home({ articles }: { articles: Article[] }) {
 						<h2>Figma</h2>
 					</div>
 				</div>
-						
-					{/* <div className="flex-box fb1">
-					<div className="fb-image">
-						<Image
-							src="/img/image1.webp"
-							alt="NEXT BASE"
-							width={672}
-							height={504}
-						/>
-					</div>
-					<div className="fb-text">
-						<p className='sub-title'>スキルについて</p>
-						<h2>My skills</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio adipisci sed repudiandae, sequi minus eligendi alias quod, vero tempore aperiam in omnis unde obcaecati consequuntur suscipit, id quas ut accusamus.</p>
-						<Link href="https://github.com/shim369" target="_blank" rel="noreferrer" className="btn-s">Github</Link>
-					</div>
-				</div> */}
 			</section>
 			<section id="a03">
 				<div className="horizontal">

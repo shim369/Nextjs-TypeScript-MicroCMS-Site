@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
@@ -65,7 +64,8 @@ export default function Header() {
 		})
 	})
 	return (
-			<header>
+		<>
+		<header>
 			<div className="header-inner">
 				<div className="logo"><Link href="/">NEXT<br />BASE</Link></div>
 				<nav className="pc-nav">
@@ -85,25 +85,7 @@ export default function Header() {
 					</nav>
 				</div>
 			</div>
-			<div className="hero-area">
-				<div className="catch1">
-					<h1>WEB<br />DEVLOPMENT</h1>
-					<p>Next.js・TypeScript・Newtによるポートフォリオサイト</p>
-				</div>
-				<div className="hero">
-					<Image
-					src="/img/index-hero.webp"
-					alt="NEXT BASE"
-					width={1135}
-					height={550}
-					priority={true}
-					/>
-				</div>
-				<div className="catch2">
-					<h2>制作依頼について</h2>
-					<p>Contactから制作のご依頼を受け付けておりますので、詳細はお問い合わせください。</p>
-				</div>
-			</div>
 		</header>
+		</>
 	)
 }
