@@ -163,7 +163,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 								<img
 									src={article.coverImage.src}
 									alt="NEXT BASE"
-								/>
+								/>									
 								<p>{article.title}</p>
 								</div>
 							</Link>
