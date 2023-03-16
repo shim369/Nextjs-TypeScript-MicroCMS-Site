@@ -153,53 +153,53 @@ export default function Home({ articles }: { articles: Article[] }) {
 				</div>
 			</section>
 			<section className="blog" id="a03">
-				<div className="horizontal">
-				<div>
-				<h1>Blog</h1>
-				<p className="read">ヘッドレスCMS「Newt」のブログ機能を組み込み、「Next.js」カテゴリーのみを表示しています。<br />ブログの横スクロールはGsapを利用しています。</p>
-				<div className="pagesWrapper" ref={pagesWrapperRef}>
-				<div className="pages" ref={pagesRef} id="pages">
-				{articles.map((article) => {
-					if(article.category.name == "Next"){
-						return (
-							<Link key={article._id} href={`articles/${article.slug}`}>
-								<div className="page">
-								<img
-									src={article.coverImage.src}
-									alt="NEXT BASE"
-								/>									
-								<p>{article.title}</p>
+					<div className="horizontal">
+						<div>
+							<h1>Blog</h1>
+							<p className="read">ヘッドレスCMS「Newt」のブログ機能を組み込み、「Next.js」カテゴリーのみを表示しています。<br />ブログの横スクロールはGsapを利用しています。</p>
+							<div className="pagesWrapper" ref={pagesWrapperRef}>
+								<div className="pages" ref={pagesRef} id="pages">
+								{articles.map((article) => {
+									if(article.category.name == "Next"){
+										return (
+											<Link key={article._id} href={`articles/${article.slug}`}>
+												<div className="page">
+												<img
+													src={article.coverImage.src}
+													alt="NEXT BASE"
+												/>									
+												<p>{article.title}</p>
+												</div>
+											</Link>
+										)
+									}
+								})}
 								</div>
-							</Link>
-						)
-					}
-				})}
-				</div>
-				</div>
-				</div>
-				</div>
+							</div>
+						</div>
+					</div>
 			</section>
 			<section className="contact" id="a04">
-				<h1>Contact</h1>
-				<p>お問い合わせから遅くても数日以内には返信させていただきます。</p>
-				<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
-				<Contact />
-				<div className="btn-area">
-					{/* <Link href="https://nuxtjs-type-script-newt.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
-						<div className="link-name">
-							<span>NUXT BASE</span>
-						</div>
-					</Link> */}
-					<Link href="https://astrobase.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
-						<div className="link-name">
-							<span>ASTRO BASE</span>
-						</div>
-					</Link>
-				</div>
-        		<p>Next.js & TypeScript & Newt</p>
-				<div className="contact-logo">
-					NEXT BASE
-				</div>
+					<h1>Contact</h1>
+					<p>お問い合わせから遅くても数日以内には返信させていただきます。</p>
+					<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
+					<Contact />
+					<div className="btn-area">
+						{/* <Link href="https://nuxtjs-type-script-newt.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
+							<div className="link-name">
+								<span>NUXT BASE</span>
+							</div>
+						</Link> */}
+						<Link href="https://astrobase.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
+							<div className="link-name">
+								<span>ASTRO BASE</span>
+							</div>
+						</Link>
+					</div>
+					<p>Next.js & TypeScript & Newt</p>
+					<div className="contact-logo">
+						NEXT BASE
+					</div>
 			</section>
 			</Layout>
 			</div>
