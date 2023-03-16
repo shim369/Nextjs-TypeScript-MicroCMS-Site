@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/layout'
 import Header from './components/header'
@@ -47,6 +48,9 @@ export default function Home({ articles }: { articles: Article[] }) {
 
 	return (
 		<>
+			<Head>
+			<title>NEXT BASE</title>
+			</Head>
 			<div className="wrapper">
 			<Header />
 			<Herotop />
@@ -181,11 +185,11 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
 				<Contact />
 				<div className="btn-area">
-					{/* <a href="https://nuxtjs-type-script-newt.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
+					{/* <Link href="https://nuxtjs-type-script-newt.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 						<div className="link-name">
 							<span>NUXT BASE</span>
 						</div>
-					</a> */}
+					</Link> */}
 					<Link href="https://astrobase.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 						<div className="link-name">
 							<span>ASTRO BASE</span>

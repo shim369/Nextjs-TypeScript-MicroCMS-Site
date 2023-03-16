@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Layout from '../components/layout'
 import Header from '../components/header'
 import Heroblog from '../components/heroblog'
@@ -5,9 +6,11 @@ import { getArticles, getArticleBySlug } from '../../lib/newt'
 import type { Article } from '../../types/article'
 
 export default function Article({ article }: { article: Article }) {
-
   return (
     <>
+      <Head>
+        <title>{article.title} | NEXT BASE</title>
+      </Head>
 			<div className="wrapper">
 			<Header />
 			<Heroblog />
