@@ -1,11 +1,15 @@
 import Image from 'next/image'
+import { Montserrat } from '@next/font/google'
+const montserrat = Montserrat({
+  subsets: ['latin'] 
+})
 
 export default function Header() {
     return (
         <div className="container">
             <div className="hero-area">
                 <div className="catch1">
-                    <h1>WEB<br />DEVLOPMENT</h1>
+                    <h1 className={montserrat.className}>WEB<br />DEVLOPMENT</h1>
                     <p>Next.js & TypeScript & Newt</p>
                 </div>
                 <div className="hero">
