@@ -1,15 +1,11 @@
 import Image from 'next/image'
-import { Montserrat } from '@next/font/google'
-const montserrat = Montserrat({
-  subsets: ['latin'] 
-})
 
 export default function Header() {
     return (
         <div className="container">
             <div className="hero-area">
                 <div className="catch1">
-                    <h1 className={montserrat.className}>Tech Blog</h1>
+                    <h1>Tech Blog</h1>
                     <p>技術について記録するブログ</p>
                 </div>
                 <div className="hero">
