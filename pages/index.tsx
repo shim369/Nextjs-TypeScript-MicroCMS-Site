@@ -56,7 +56,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<div className="flex-box fb2">
 					<div className="fb-image">
 					<Image
-						src="/img/image5.webp"
+						src="/img/image1.webp"
 						alt="NEXT BASE"
 						width={672}
 						height={504}
@@ -148,7 +148,29 @@ export default function Home({ articles }: { articles: Article[] }) {
 					</div>
 				</div>
 			</section>
-			<section id="a03">
+			<section className="blog" id="a03">
+				{/* <h1>Blog</h1>
+				<p className="read">ヘッドレスCMS「Newt」のブログ機能を組み込み、「Next.js」カテゴリーのみを表示しています。<br />ブログの横スクロールはGsapを利用しています。</p>
+				<div className="blog-area">
+				{articles.map((article) => {
+					if(article.category.name == "Next"){
+						return (
+							<div className="blog-card">
+								<div className="img-category">
+									<img src={article.coverImage.src} alt={article.title} />
+									<h3>Astro</h3>
+								</div>
+								<div className="date">
+									<span className="material-symbols-outlined">schedule</span>
+									{ new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(article.date))}
+								</div>
+								<h2>{article.title}</h2>
+								<Link key={article._id} href={`articles/${article.slug}`} className="btn-s">Read more</Link>
+							</div>
+						)
+					}
+				})}
+				</div> */}
 				<div className="horizontal">
 				<div>
 				<h1>Blog</h1>
