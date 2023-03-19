@@ -185,11 +185,11 @@ export default function Home({ articles }: { articles: Article[] }) {
 					<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
 					<Contact />
 					<div className="btn-area">
-						{/* <Link href="https://nuxtjs-type-script-newt.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
+						<Link href="https://nuxtbase.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 							<div className="link-name">
 								<span>NUXT BASE</span>
 							</div>
-						</Link> */}
+						</Link>
 						<Link href="https://astrobase.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 							<div className="link-name">
 								<span>ASTRO BASE</span>
