@@ -1,6 +1,20 @@
 import Image from 'next/image'
+import React, { useEffect, useRef } from "react"
+import { gsap } from "gsap"
 
 export default function Header() {
+    // const ref = React.useRef(null)
+	const heroRef = useRef<HTMLDivElement | null >(null)
+	useEffect(() => {
+		gsap.from(heroRef.current, {
+			height: "0vh",
+		})
+		gsap.to(heroRef.current, {
+			height: "80vh",
+			duration: 3,
+			ease: "Power3.easeOut"
+		})
+	})
     return (
         <div className="container">
             <div className="hero-area">
@@ -8,7 +22,7 @@ export default function Header() {
                     <h1>Tech Blog</h1>
                     <p>技術について記録するブログ</p>
                 </div>
-                <div className="hero">
+                <div ref={heroRef} className="hero">
                     <Image
                     src="/img/detail-hero.webp"
                     alt="NEXT BASE"

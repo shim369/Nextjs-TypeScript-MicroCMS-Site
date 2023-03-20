@@ -7,36 +7,6 @@ const inter = Inter({
 	subsets: ['latin'] 
 })
 export default function Header() {
-	// const title = "Vercel deploy test"
-	// const ref = React.useRef(null)
-	// const heroRef = useRef<HTMLDivElement | null >(null)
-	// const textRef = useRef<HTMLDivElement | null >(null)
-	// useEffect(() => {
-	// 	gsap.to(ref.current, {
-	// 		backgroundImage: "linear-gradient(to left, #30CFD0, #330867)",
-	// 		duration: 3,
-	// 	})
-	// 	gsap.from(heroRef.current, {
-	// 		height: "0%",
-	// 		width: "100%",
-	// 	})
-	// 	gsap.to(heroRef.current, {
-	// 		height: "90%",
-	// 		width: "80%",
-	// 		duration: 2,
-	// 		ease: "Power3.easeOut"
-	// 	})
-	// 	gsap.from(textRef.current, {
-	// 		opacity: 0,
-	// 		color: "transparent",
-	// 	})
-	// 	gsap.to(textRef.current, {
-	// 		opacity: 1,
-	// 		color: "#fde804",
-	// 		duration: 3,
-	// 	})
-	// })
-
 	let headerInner: HTMLElement
 	let nav: HTMLElement
 	let spNav: HTMLElement
