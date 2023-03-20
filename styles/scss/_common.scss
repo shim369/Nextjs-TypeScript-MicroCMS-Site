@@ -227,14 +227,19 @@ header {
 		transition: all .5s ease;
 		@media (max-width: 1200px) {
 			width: 64%;
-    		bottom: 50px;
+    		bottom: 30px;
+		}
+		@media (max-width: 1000px) {
+			width: 80%;
+			bottom: 30px;
 		}
 		@media (max-width: 800px) {
-			width: 88%;
-			bottom: 50px;
+			width: 80%;
+			bottom: 20px;
 		}
 		@media (max-width: 400px) {
-			bottom: 54px;
+    		width: 90%;
+			bottom: 10px;
 		}
 		h2 {
 			font-size: 1.1em;
