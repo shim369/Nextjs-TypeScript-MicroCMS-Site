@@ -35,10 +35,13 @@ h4 {
 	font-weight: 400;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: #000;
 	color: #fff;
-	scroll-behavior: smooth;
 }
 
 .wrapper {
