@@ -1,19 +1,20 @@
 import Image from 'next/image'
-import React, { useEffect, useRef } from "react"
+import { useEffect } from "react"
 import { gsap } from "gsap"
-
 export default function Header() {
-    // const ref = React.useRef(null)
-	const heroRef = useRef<HTMLDivElement | null >(null)
 	useEffect(() => {
-		gsap.from(heroRef.current, {
-			height: "0vh",
-		})
-		gsap.to(heroRef.current, {
-			height: "80vh",
-			duration: 3,
-			ease: "Power3.easeOut"
-		})
+        gsap.fromTo('.heroImage', {width: "0%"},{
+            width: "100%",
+            ease: "power3.ease",
+            duration: 1.2,
+        })
+        gsap.fromTo('.catch1',{y: -50, opacity: 0,},{
+            y: 0,
+            opacity: 1,
+            ease: "power3.inOut",
+            delay: 1,
+            duration: 1.5,
+        })
 	})
     return (
         <div className="container">
@@ -22,13 +23,14 @@ export default function Header() {
                     <h1>Tech Blog</h1>
                     <p>技術について記録するブログ</p>
                 </div>
-                <div ref={heroRef} className="hero">
+                <div className="hero">
                     <Image
                     src="/img/detail-hero.webp"
                     alt="NEXT BASE"
                     width={1135}
                     height={550}
                     priority={true}
+                    className="heroImage"
                     />
                 </div>
                 <div className="catch2">

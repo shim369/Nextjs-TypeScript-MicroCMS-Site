@@ -27,6 +27,9 @@
 			margin-bottom: 30px;
 			font-size: 2em;
 			text-align: left;
+			@media (max-width: 800px) {
+				font-size: 1.5em;
+			}
 		}
 		.date {
 			font-size: 1.5em;
