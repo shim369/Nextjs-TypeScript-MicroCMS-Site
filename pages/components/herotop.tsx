@@ -12,7 +12,7 @@ export default function Header() {
             y: 0,
             opacity: 1,
             ease: "power3.inOut",
-            delay: 1,
+            delay: .5,
             duration: 1.5,
         })
 	})
