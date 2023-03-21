@@ -38,6 +38,9 @@
 			align-items: center;
 			justify-content: flex-end;
 			line-height: 1;
+			@media (max-width: 800px) {
+				font-size: 1.2em;
+			}
 			span {
 				font-weight: 400;
 				margin-right: 3px;
@@ -46,12 +49,18 @@
 		img {
 			width: 100%;
 			margin-bottom: 30px;
+			@media (max-width: 800px) {
+				margin-bottom: 20px;
+			}
 		}
 		p {
 			margin-bottom: 30px;
 			line-height: 1.5;
 			font-size: 1.5em;
 			word-break: break-all;
+			@media (max-width: 800px) {
+				font-size: 1.2em;
+			}
 		}
 	}
 }
