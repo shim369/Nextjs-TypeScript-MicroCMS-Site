@@ -196,7 +196,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 							</div>
 						</Link>
 					</div>
-					<p>Next.js & TypeScript & Newt</p>
+					<p className="contact-catch">Next.js & TypeScript & Newt</p>
 					<div className="contact-logo">
 						NEXT BASE
 					</div>
