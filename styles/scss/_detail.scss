@@ -1,3 +1,16 @@
+.header-blog {
+	&::after {
+		height: 70vh;
+	}
+}
+
+.hero-blog {
+	height: 70vh;
+	.hero {
+		height: 50vh;
+	}
+}
+
 .detail-sec {
 	width: 80%;
 	margin-left: auto;
