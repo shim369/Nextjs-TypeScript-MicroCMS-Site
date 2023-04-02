@@ -116,11 +116,15 @@ header {
 			font-family: var(--inter-font);
 			@media (max-width: 1200px) {
 				font-size: 2.5em;
-    			padding: 35px 30px;
+    			padding: 40px 32px;
 			}
 			@media (max-width: 800px) {
 				font-size: 2em;
-    			padding: 25px 15px;
+    			padding: 24px 16px;
+			}
+			@media (max-height: 450px) {
+				font-size: 1.8em;
+    			padding: 24px 16px;
 			}
 		}
 	}
@@ -217,7 +221,7 @@ header {
 			@media (max-width: 400px) {
 				font-size: 2.5em;
 			}
-			@media (max-height: 400px) {
+			@media (max-height: 450px) {
 				font-size: 2.5em;
 			}
 		}
@@ -251,7 +255,7 @@ header {
     		width: 90%;
 			bottom: 10px;
 		}
-		@media (max-height: 400px) {
+		@media (max-height: 450px) {
 			bottom: 0px;
 			padding: 15px;
 		}
@@ -259,15 +263,15 @@ header {
 			font-size: 1.1em;
 			margin-bottom: 10px;
 			font-weight: 500;
-			@media (max-height: 400px) {
+			@media (max-height: 450px) {
 				font-size: .8em;
 			}
 		}
 		p {
 			font-size: 1em;
 			line-height: 1.4;
-			@media (max-height: 400px) {
-				font-size: .7em;
+			@media (max-height: 450px) {
+				font-size: .8em;
 			}
 		}
 	}
