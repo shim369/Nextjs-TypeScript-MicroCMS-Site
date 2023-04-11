@@ -166,7 +166,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 												<div className="page">
 												<img
 													src={article.coverImage.src}
-													alt="NEXT BASE"
+													alt={article.title}
 												/>									
 												<p>{article.title}</p>
 												</div>

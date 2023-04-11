@@ -1,38 +1,51 @@
 import Link from 'next/link'
-import React, { useEffect, useRef } from "react"
-import { gsap } from "gsap"
+import { useEffect, useRef } from "react"
 import { Inter } from '@next/font/google'
-const inter = Inter({ 
-	variable: "--inter-font",
-	subsets: ['latin'] 
-})
+
 export default function Header() {
-	let headerInner: HTMLElement
-	let nav: HTMLElement
-	let spNav: HTMLElement
-	let body: HTMLElement
-	let menuBtn: HTMLElement
-	
+	const headerInner = useRef<HTMLElement | null>(null);
+	const nav = useRef<HTMLElement | null>(null);
+	const spNav = useRef<HTMLElement | null>(null);
+	const body = useRef<HTMLElement | null>(null);
+	const menuBtn = useRef<HTMLElement | null>(null);
+  
 	useEffect(() => {
-		headerInner = document.querySelector(".header-inner")!;
-		window.addEventListener("scroll", () => {
-			if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-				headerInner.classList.add("active");
-			} else {
-				headerInner.classList.remove("active");
-			}
-		})
+	  headerInner.current = document.querySelector(".header-inner");
+	  window.addEventListener("scroll", () => {
+		if (headerInner.current) {
+		  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+			headerInner.current.classList.add("active");
+		  } else {
+			headerInner.current.classList.remove("active");
+		  }
+		}
+	  });
+  
+	  nav.current = document.querySelector(".header-lists");
+	  spNav.current = document.querySelector(".sp-nav");
+  
+	  if (nav.current && spNav.current) {
+		spNav.current.appendChild(nav.current.cloneNode(true));
+	  }
+  
+	  body.current = document.querySelector("body");
+	  menuBtn.current = document.querySelector(".sp-nav-btn");
+  
+	  if (menuBtn.current) {
+		menuBtn.current.addEventListener("click", () => {
+		  if (body.current) {
+			body.current.classList.toggle("side-open");
+		  }
+		});
+	  }
 
-		nav = document.querySelector('.header-lists')!;
-		spNav = document.querySelector('.sp-nav')!;
-		spNav.appendChild(nav.cloneNode(true));
-
-		body = document.querySelector('body')!;
-		menuBtn = document.querySelector('.sp-nav-btn')!;
-		menuBtn.addEventListener('click', () => {
-			body.classList.toggle('side-open');
-		})
-	})
+	 return () => {
+		window.removeEventListener("scroll", () => {});
+		if (menuBtn.current) {
+		  menuBtn.current.removeEventListener("click", () => {});
+		}
+	  };
+	}, []);
 	return (
 		<>
 		<header>
