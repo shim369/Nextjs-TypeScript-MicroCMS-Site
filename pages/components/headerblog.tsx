@@ -47,7 +47,7 @@ export default function Header() {
 	}, []);
 	return (
 		<>
-		<header className="header-blog">
+		<header>
 			<div className="header-inner">
 				<div className="logo"><Link href="/">NEXT<br />BASE</Link></div>
 				<nav className="pc-nav">

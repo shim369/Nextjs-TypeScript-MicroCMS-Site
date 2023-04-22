@@ -18,9 +18,9 @@ export default function Header() {
 	})
     return (
         <div className="container">
-            <div className="hero-area hero-blog">
+            <div className="hero-area">
                 <div className="catch1">
-                    <h1>Tech Blog</h1>
+                    <h1>TECH BLOG</h1>
                     <p>技術について記録するブログ</p>
                 </div>
                 <div className="hero">
