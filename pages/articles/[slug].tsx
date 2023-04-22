@@ -16,7 +16,6 @@ export default function Article({ article }: { article: Article }) {
 			<Heroblog />
 			<Layout>
 				<section className="detail-sec">
-				<h1>Next.js Blog</h1>
 				<hr />
 				<div className="blog-content">
           <h1>{article.title}</h1>

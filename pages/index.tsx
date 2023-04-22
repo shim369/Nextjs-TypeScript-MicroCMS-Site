@@ -67,8 +67,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 					/>
 					</div>
 					<div className="fb-text">
-						<p className='sub-title'>NEXT BASEについて</p>
-						<h2>About NEXT BASE</h2>
+						<h2>NEXT BASEについて</h2>
 						<p>このサイトはNext.jsとTypeScriptをメインに制作しています。<br />さらにヘッドレスCMS「Newt」を利用し、ブログとお問合せフォームを組み込みしています。<br />ブログの横スクロールはGsapを利用しています。</p>
 						<Link href="https://github.com/shim369/Nextjs-TypeScript-Newt-Blog" target="_blank" rel="noreferrer" className="btn-s">Github</Link>
 					</div>
