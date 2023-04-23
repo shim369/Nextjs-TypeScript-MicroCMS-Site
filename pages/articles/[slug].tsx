@@ -19,7 +19,7 @@ export default function Article({ article }: { article: Article }) {
 				<hr />
 				<div className="blog-content">
           <h1>{article.title}</h1>
-          <div className="date"><span className="material-symbols-outlined">schedule</span>
+          <div className="date"><span className="material-icons">schedule</span>
 									{ new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(article.date))}</div>
           <div dangerouslySetInnerHTML={{ __html: article.body }} />  
 				</div>
