@@ -10,6 +10,7 @@ import { getArticles } from '../lib/newt'
 import type { Article } from '../types/article'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import AOS from 'aos'
 
 export default function Home({ articles }: { articles: Article[] }) {
 	gsap.registerPlugin(ScrollTrigger)
@@ -34,6 +35,17 @@ export default function Home({ articles }: { articles: Article[] }) {
 		})
 	}
   
+	const skills = [
+		{ name: 'Astro', image: '/img/astro.webp' },
+		{ name: 'JavaScript', image: '/img/js.webp' },
+		{ name: 'Next.js', image: '/img/next.webp' },
+		{ name: 'Nuxt.js', image: '/img/nuxt.webp' },
+		{ name: 'Python', image: '/img/py.webp' },
+		{ name: 'Django', image: '/img/django.webp' },
+		{ name: 'Newt', image: '/img/newt.webp' },
+		{ name: 'Figma', image: '/img/figma.webp' },
+	];
+	  
 
 	useEffect(() => {
 		if (didEffect.current) return 
@@ -44,6 +56,8 @@ export default function Home({ articles }: { articles: Article[] }) {
 		const pagesWrapperElement = pagesWrapperRef?.current;
 		if(!pagesWrapperElement) return
 		setupGsap(pagesElement, pagesWrapperElement)
+
+		AOS.init({});
 	}, [])
 
 	return (
@@ -58,7 +72,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 			<section id="a01">
 				<h1>About</h1>
 				<div className="flex-box fb2">
-					<div className="fb-image">
+					<div className="fb-image" data-aos="fade-up">
 					<Image
 						src="/img/image1.webp"
 						alt="NEXT BASE"
@@ -77,78 +91,17 @@ export default function Home({ articles }: { articles: Article[] }) {
 			<section id="a02">
 				<h1>Skills</h1>
 				<div className="skills-box">
-					<div className="skills-item">
-						<Image
-							src="/img/astro.webp"
-							alt="astro"
-							width={225}
-							height={225}
-						/>
-						<h2>Astro</h2>
+				{skills.map((skill, index) => (
+					<div
+					className="skills-item"
+					key={skill.name}
+					data-aos="fade-up"
+					data-aos-delay={index * 100}
+					>
+					<Image src={skill.image} alt={skill.name} width={225} height={225} />
+					<h2>{skill.name}</h2>
 					</div>
-					<div className="skills-item">
-						<Image
-							src="/img/js.webp"
-							alt="js"
-							width={225}
-							height={225}
-						/>
-						<h2>JavaScript</h2>
-					</div>
-					<div className="skills-item">
-						<Image
-							src="/img/next.webp"
-							alt="next.js"
-							width={225}
-							height={225}
-						/>
-						<h2>Next.js</h2>
-					</div>
-					<div className="skills-item">
-						<Image
-							src="/img/nuxt.webp"
-							alt="Nuxt"
-							width={225}
-							height={225}
-						/>
-						<h2>Nuxt.js</h2>
-					</div>
-					<div className="skills-item">
-						<Image
-							src="/img/py.webp"
-							alt="Python"
-							width={225}
-							height={225}
-						/>
-						<h2>Python</h2>
-					</div>
-					<div className="skills-item">
-						<Image
-							src="/img/django.webp"
-							alt="django"
-							width={225}
-							height={225}
-						/>
-						<h2>Django</h2>
-					</div>
-					<div className="skills-item">
-						<Image
-							src="/img/newt.webp"
-							alt="Newt"
-							width={225}
-							height={225}
-						/>
-						<h2>Newt</h2>
-					</div>
-					<div className="skills-item">
-						<Image
-							src="/img/figma.webp"
-							alt="figma"
-							width={225}
-							height={225}
-						/>
-						<h2>Figma</h2>
-					</div>
+				))}
 				</div>
 			</section>
 			<section className="blog" id="a03">
@@ -183,7 +136,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 					<p>お問い合わせから遅くても数日以内には返信させていただきます。</p>
 					<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
 					<Contact />
-					<div className="btn-area">
+					<div className="btn-area" data-aos="fade-up">
 						<Link href="https://nuxtbase.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 							<div className="link-name">
 								<span>NUXT BASE</span>

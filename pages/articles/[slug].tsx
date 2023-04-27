@@ -4,8 +4,14 @@ import Headerblog from '../components/headerblog'
 import Heroblog from '../components/heroblog'
 import { getArticles, getArticleBySlug } from '../../lib/newt'
 import type { Article } from '../../types/article'
+import React, { useEffect } from 'react'
+import AOS from 'aos'
 
 export default function Article({ article }: { article: Article }) {
+
+	useEffect(() => {
+    AOS.init({});
+  })
   return (
     <>
       <Head>
@@ -15,7 +21,7 @@ export default function Article({ article }: { article: Article }) {
 			<Headerblog />
 			<Heroblog />
 			<Layout>
-				<section className="detail-sec">
+				<section className="detail-sec" data-aos="fade-up">
 				<hr />
 				<div className="blog-content">
           <h1>{article.title}</h1>
