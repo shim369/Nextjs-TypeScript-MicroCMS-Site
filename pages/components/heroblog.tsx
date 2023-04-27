@@ -17,22 +17,20 @@ export default function Header() {
         })
 	})
     return (
-        <div className="container">
-            <div className="hero-area">
-                <div className="catch1">
-                    <h1>TECH BLOG</h1>
-                    <p>技術について記録するブログ</p>
-                </div>
-                <div className="hero">
-                    <Image
-                    src="/img/detail-hero.webp"
-                    alt="NEXT BASE"
-                    width={1135}
-                    height={550}
-                    priority={true}
-                    className="heroImage"
-                    />
-                </div>
+        <div className="hero-area">
+            <div className="catch1">
+                <h1>TECH BLOG</h1>
+                <p>技術について記録するブログ</p>
+            </div>
+            <div className="hero">
+                <Image
+                src="/img/detail-hero.webp"
+                alt="NEXT BASE"
+                width={1135}
+                height={550}
+                priority={true}
+                className="heroImage"
+                />
             </div>
         </div>
     )
