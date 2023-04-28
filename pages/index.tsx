@@ -80,7 +80,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 						height={504}
 					/>
 					</div>
-					<div className="fb-text">
+					<div className="fb-text" data-aos="fade-right">
 						<h2>NEXT BASEについて</h2>
 						<p>このサイトはNext.jsとTypeScriptをメインに制作しています。<br />さらにヘッドレスCMS「Newt」を利用し、ブログとお問合せフォームを組み込みしています。<br />ブログの横スクロールはGsapを利用しています。</p>
 						<Link href="https://github.com/shim369/Nextjs-TypeScript-Newt-Blog" target="_blank" rel="noreferrer" className="btn-s">Github</Link>
@@ -133,9 +133,11 @@ export default function Home({ articles }: { articles: Article[] }) {
 			</section>
 			<section className="contact" id="a04">
 					<h1>Contact</h1>
-					<p>お問い合わせから遅くても数日以内には返信させていただきます。</p>
-					<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
-					<Contact />
+					<div data-aos="fade-up">
+						<p>お問い合わせから遅くても数日以内には返信させていただきます。</p>
+						<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
+						<Contact />
+					</div>
 					<div className="btn-area" data-aos="fade-up">
 						<Link href="https://nuxtbase.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
 							<div className="link-name">
