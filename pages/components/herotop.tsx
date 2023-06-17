@@ -3,17 +3,17 @@ import { useEffect } from "react"
 import { gsap } from "gsap"
 export default function Header() {
 	useEffect(() => {
-        gsap.fromTo('.heroImage', {height: "0%"},{
-            height: "100%",
-            ease: "power3.inOut",
-            duration: .6,
+        gsap.fromTo('.hero', {height: "0vh"},{
+            height: "80vh",
+            ease: "power2.easeInOut",
+            duration: .8,
         })
-        gsap.fromTo('.catch1',{y: -50, opacity: 0,},{
-            y: 0,
+        gsap.fromTo('.catch1',{x: -50, opacity: 0,},{
+            x: 0,
             opacity: 1,
-            ease: "power3.inOut",
-            delay: .6,
-            duration: 1,
+            ease: "power2.easeInOut",
+            delay: .8,
+            duration: .8,
         })
 	})
     return (
