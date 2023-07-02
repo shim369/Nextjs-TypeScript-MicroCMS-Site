@@ -8,8 +8,8 @@ export default function Header() {
             ease: "power2.easeInOut",
             duration: .8,
         })
-        gsap.fromTo('.catch1',{x: -50, opacity: 0,},{
-            x: 0,
+        gsap.fromTo('.catch1',{y: -50, opacity: 0,},{
+            y: 0,
             opacity: 1,
             ease: "power2.easeInOut",
             delay: .8,
