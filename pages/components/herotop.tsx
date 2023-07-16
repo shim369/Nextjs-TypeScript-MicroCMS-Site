@@ -3,17 +3,37 @@ import { useEffect } from "react"
 import { gsap } from "gsap"
 export default function Header() {
 	useEffect(() => {
+        gsap.fromTo('.logo', {opacity: 0},{
+            opacity: 1,
+            duration: .5,
+            ease: "power2.easeInOut",
+        })
+        gsap.fromTo('.pc-nav', {opacity: 0},{
+            opacity: 1,
+            duration: .5,
+            ease: "power2.easeInOut",
+        })
+        gsap.fromTo('.sp-nav-btn', {opacity: 0},{
+            opacity: 1,
+            duration: .5,
+            ease: "power2.easeInOut",
+        })
+        gsap.fromTo('.catch2', {opacity: 0},{
+            opacity: 1,
+            duration: .5,
+            ease: "power2.easeInOut",
+        })
         gsap.fromTo('.hero', {height: "0vh"},{
             height: "80vh",
             ease: "power2.easeInOut",
-            duration: .8,
+            duration: .5,
         })
         gsap.fromTo('.catch1',{y: -30, opacity: 0,},{
             y: 0,
             opacity: 1,
             ease: "power2.easeInOut",
-            delay: .8,
-            duration: .8,
+            delay: .5,
+            duration: .5,
         })
 	})
     return (

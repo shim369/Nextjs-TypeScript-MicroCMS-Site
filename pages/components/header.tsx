@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useEffect, useRef } from "react"
-import { Inter } from '@next/font/google'
+import { gsap } from "gsap"
 
 export default function Header() {
 	const headerInner = useRef<HTMLElement | null>(null);
@@ -10,41 +10,48 @@ export default function Header() {
 	const menuBtn = useRef<HTMLElement | null>(null);
   
 	useEffect(() => {
-	  headerInner.current = document.querySelector(".header-inner");
-	  window.addEventListener("scroll", () => {
+		gsap.registerPlugin(CSSRulePlugin);
+		const rule = CSSRulePlugin.getRule('header::after');
+        gsap.fromTo(rule, {width: 0},{
+            width: "50%",
+            duration: .5,
+            ease: "power2.easeInOut",
+        })
+		headerInner.current = document.querySelector(".header-inner");
+		window.addEventListener("scroll", () => {
 		if (headerInner.current) {
-		  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+			if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
 			headerInner.current.classList.add("active");
-		  } else {
+			} else {
 			headerInner.current.classList.remove("active");
-		  }
+			}
 		}
-	  });
-  
-	  nav.current = document.querySelector(".header-lists");
-	  spNav.current = document.querySelector(".sp-nav");
-  
-	  if (nav.current && spNav.current) {
-		spNav.current.appendChild(nav.current.cloneNode(true));
-	  }
-  
-	  body.current = document.querySelector("body");
-	  menuBtn.current = document.querySelector(".sp-nav-btn");
-  
-	  if (menuBtn.current) {
-		menuBtn.current.addEventListener("click", () => {
-		  if (body.current) {
-			body.current.classList.toggle("side-open");
-		  }
 		});
-	  }
 
-	 return () => {
+		nav.current = document.querySelector(".header-lists");
+		spNav.current = document.querySelector(".sp-nav");
+
+		if (nav.current && spNav.current) {
+		spNav.current.appendChild(nav.current.cloneNode(true));
+		}
+
+		body.current = document.querySelector("body");
+		menuBtn.current = document.querySelector(".sp-nav-btn");
+
+		if (menuBtn.current) {
+		menuBtn.current.addEventListener("click", () => {
+			if (body.current) {
+			body.current.classList.toggle("side-open");
+			}
+		});
+		}
+
+		return () => {
 		window.removeEventListener("scroll", () => {});
 		if (menuBtn.current) {
-		  menuBtn.current.removeEventListener("click", () => {});
+			menuBtn.current.removeEventListener("click", () => {});
 		}
-	  };
+		};
 	}, []);
 	return (
 		<>
