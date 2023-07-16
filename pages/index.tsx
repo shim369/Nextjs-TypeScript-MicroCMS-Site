@@ -96,7 +96,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 					className="skills-item"
 					key={skill.name}
 					data-aos="fade-up"
-					data-aos-delay={index * 100}
+					data-aos-delay={index * 50}
 					>
 					<Image src={skill.image} alt={skill.name} width={225} height={225} />
 					<h2>{skill.name}</h2>

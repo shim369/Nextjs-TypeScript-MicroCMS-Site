@@ -10,7 +10,9 @@ export default function Header() {
 	const menuBtn = useRef<HTMLElement | null>(null);
   
 	useEffect(() => {
-		gsap.registerPlugin(CSSRulePlugin);
+		const GSAP = require("gsap/CSSRulePlugin");
+		const { CSSRulePlugin } = GSAP;
+		gsap.registerPlugin(CSSRulePlugin); 
 		const rule = CSSRulePlugin.getRule('header::after');
         gsap.fromTo(rule, {width: 0},{
             width: "50%",
