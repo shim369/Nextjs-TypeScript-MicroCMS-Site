@@ -62,7 +62,7 @@ header {
 		z-index: 100;
 		&.active {
 			position: fixed;
-			@media (max-width: 800px) {
+			@media (max-width: 767px) {
 				position: absolute;
 			}
 			.logo {
@@ -116,7 +116,7 @@ header {
 				font-size: 2.5em;
     			padding: 40px 32px;
 			}
-			@media (max-width: 800px) {
+			@media (max-width: 767px) {
 				font-size: 2em;
     			padding: 24px 16px;
 			}
@@ -131,7 +131,7 @@ header {
 		right: 0;
 		z-index: 5;
 		background: rgba(0,0,0,1);
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			display: none;
 		}
 		ul {
@@ -180,7 +180,7 @@ header {
 		@media (max-width: 1200px) {
 			width: 85%;
 		}
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			width: 92%;
 		}
 		.heroImage {
@@ -195,7 +195,7 @@ header {
 		left: 5%;
 		z-index: 4;
 		opacity: 0;
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			left: 2%;
 		}
 		h1 {
@@ -209,7 +209,7 @@ header {
 			@media (max-width: 1200px) {
 				font-size: 4.5em;
 			}
-			@media (max-width: 800px) {
+			@media (max-width: 767px) {
 				font-size: 4em;
 			}
 			@media (max-width: 600px) {
@@ -232,44 +232,40 @@ header {
 		z-index: 4;
 		right: 0;
 		bottom: 20px;
-		background: rgb(104 64 26 / 81%);
-		width: 38%;
+		background: #fbdc00e3;
+		width: 25%;
 		padding: 20px;
 		transition: all .5s ease;
+		color: #000;
 		@media (max-width: 1200px) {
 			width: 64%;
     		bottom: 30px;
 		}
 		@media (max-width: 1000px) {
-			width: 80%;
-			bottom: 30px;
+			width: 58%;
+			bottom: 3vh;
 		}
-		@media (max-width: 800px) {
-			width: 80%;
-			bottom: 20px;
-		}
-		@media (max-width: 400px) {
-    		width: 90%;
-			bottom: 10px;
-		}
-		@media (max-height: 450px) {
-			bottom: 0px;
-			padding: 15px;
+		@media (max-width: 767px) {
+			width: 58%;
+			bottom: 3vh;
+			padding: 16px;
 		}
 		h2 {
 			font-size: 1.1em;
 			margin-bottom: 10px;
 			font-weight: 500;
-			border-left: 4px solid #fff;
-			padding-left: 8px;
-			@media (max-height: 450px) {
+			padding: 5px;
+			background: #000;
+			color: #fff;
+			@media (max-height: 767px) {
 				font-size: .8em;
+				text-align: center;
 			}
 		}
 		p {
 			font-size: 1em;
 			line-height: 1.4;
-			@media (max-height: 450px) {
+			@media (max-height: 767px) {
 				font-size: .8em;
 			}
 		}
@@ -281,12 +277,12 @@ header {
 	color: #fff;
 	display: none;
 	width: 100%;
-	@media (max-width: 800px) {
+	@media (max-width: 767px) {
 		display: block;
 	}
 	.header-lists {
 		position: absolute;
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
@@ -295,7 +291,7 @@ header {
 			height: 100%;
 		}
 		li {
-			margin-bottom: 20px;
+			margin-bottom: 35px;
 			a {
 				color: #fff;
 				font-size: 1.5em;
@@ -369,7 +365,7 @@ header {
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 0 2%;
-	@media (max-width: 800px) {
+	@media (max-width: 767px) {
 		padding: 0 4%;
 	}
 }
@@ -382,7 +378,7 @@ section {
 		font-size: 4em;
 		margin: 0 0 50px;
 		font-family: 'Montserrat', sans-serif;
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			font-size: 2.5em;
 		}
 	}
@@ -417,7 +413,7 @@ main {
 	background-size: cover;
 	margin: 0 20px 40px;
 	transition: all .5s ease;
-	@media (max-width: 800px) {	
+	@media (max-width: 767px) {	
 		width: 80%;
 	}
 	&:hover {

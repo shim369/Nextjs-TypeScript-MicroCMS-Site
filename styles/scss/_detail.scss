@@ -15,7 +15,7 @@
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
-	@media (max-width: 800px) {
+	@media (max-width: 767px) {
 		width: 100%;
 	}
 	hr {
@@ -40,7 +40,7 @@
 			margin-bottom: 30px;
 			font-size: 2em;
 			text-align: left;
-			@media (max-width: 800px) {
+			@media (max-width: 767px) {
 				font-size: 1.5em;
 			}
 		}
@@ -51,7 +51,7 @@
 			align-items: center;
 			justify-content: flex-end;
 			line-height: 1;
-			@media (max-width: 800px) {
+			@media (max-width: 767px) {
 				font-size: 1.2em;
 			}
 			span {
@@ -62,7 +62,7 @@
 		img {
 			width: 100%;
 			margin-bottom: 30px;
-			@media (max-width: 800px) {
+			@media (max-width: 767px) {
 				margin-bottom: 20px;
 			}
 		}
@@ -71,7 +71,7 @@
 			line-height: 1.5;
 			font-size: 1.5em;
 			word-break: break-all;
-			@media (max-width: 800px) {
+			@media (max-width: 767px) {
 				font-size: 1.2em;
 			}
 		}

@@ -2,19 +2,19 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
-	@media (max-width: 800px) {
+	@media (max-width: 767px) {
 		flex-direction: column;
 	}
 	&.fb2 {
 		flex-direction: row-reverse;
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			flex-direction: column;
 		}
 	}
 	.fb-image {
 		width: 48%;
 		height: auto;
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			width: 100%;
 			margin-bottom: 30px;
 		}
@@ -26,7 +26,7 @@
 	}
 	.fb-text {
 		width: 48%;
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			width: 100%;
 		}
 	}
@@ -39,7 +39,7 @@
 		font-size: 2.5em;
 		margin-bottom: 20px;
 		font-family: var(--mnter-font);
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			font-size: 2em;
 		}
 	}
@@ -58,7 +58,7 @@
 		margin-bottom: 50px;
 		text-align: center;
 		width: 24%;
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			width: 48%;
 		}
 		img {
@@ -67,7 +67,7 @@
 			height: auto;
 			text-align: center;
 			margin-bottom: 10px;
-			@media (max-width: 800px) {
+			@media (max-width: 767px) {
 				max-width: 50%;
 			}
 		}
@@ -179,7 +179,7 @@
 		align-items: center;
 		margin-top: 60px;
 		margin-bottom: 60px;
-		@media (max-width: 800px) {
+		@media (max-width: 767px) {
 			flex-direction: column;
 		}
 	}
