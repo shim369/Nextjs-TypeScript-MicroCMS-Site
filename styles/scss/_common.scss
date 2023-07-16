@@ -82,6 +82,12 @@ header {
 					}
 				}
 			}
+			.sp-nav-btn {
+				padding: 10px;
+				.material-icons {
+					font-size: 1.8em;
+				}
+			}
 		}
 	}
 	&::after {
@@ -141,7 +147,7 @@ header {
 					a {
 						background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
 						&:hover {
-							background-image: linear-gradient(to left top, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
+							background: #666666;
 						}
 					}
 				}
@@ -153,8 +159,7 @@ header {
 					font-size: 1em;
     				font-weight: 600;
 					&:hover {
-						background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
-
+						background: #666666;
 					}
 				}
 			}
@@ -232,22 +237,21 @@ header {
 		z-index: 4;
 		right: 0;
 		bottom: 20px;
-		background: #fbdc00e3;
+		background: #666666;
 		width: 25%;
 		padding: 20px;
 		transition: all .5s ease;
-		color: #000;
+		color: #fff;
 		@media (max-width: 1200px) {
 			width: 64%;
     		bottom: 30px;
 		}
 		@media (max-width: 1000px) {
 			width: 58%;
-			bottom: 3vh;
+			bottom: 8vh;
 		}
 		@media (max-width: 767px) {
-			width: 58%;
-			bottom: 3vh;
+			width: 62%;
 			padding: 16px;
 		}
 		h2 {
@@ -255,7 +259,8 @@ header {
 			margin-bottom: 10px;
 			font-weight: 500;
 			padding: 5px;
-			background: #000;
+			background: #e3281f;
+			background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
 			color: #fff;
 			@media (max-height: 767px) {
 				font-size: .8em;
@@ -306,6 +311,7 @@ header {
 	right: 0;
 	background-image: linear-gradient(to right bottom, #e3281f, #e4451b, #e45a19, #e46c1a, #e37d1f);
 	padding: 16px;
+	transition: all .5s ease;
 	cursor: pointer;
 	.material-icons {
 		font-size: 2.4em;

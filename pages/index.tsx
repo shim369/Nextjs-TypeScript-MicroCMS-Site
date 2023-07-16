@@ -74,7 +74,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 				<div className="flex-box fb2">
 					<div className="fb-image" data-aos="fade-up">
 					<Image
-						src="/img/image1.webp"
+						src="/img/image5.webp"
 						alt="NEXT BASE"
 						width={672}
 						height={504}
@@ -82,7 +82,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 					</div>
 					<div className="fb-text" data-aos="fade-right">
 						<h2>NEXT BASEについて</h2>
-						<p>このサイトはNext.jsとTypeScriptをメインに制作しています。<br />さらにヘッドレスCMS「Newt」を利用し、ブログとお問合せフォームを組み込みしています。<br />ブログの横スクロールはGsapを利用しています。</p>
+						<p>このサイトはNext.jsとTypeScriptをメインに制作しています。<br />さらにヘッドレスCMS「Newt」を利用し、ブログとお問合せフォームを組み込んでいます。</p>
 						<Link href="https://github.com/shim369/Nextjs-TypeScript-Newt-Blog" target="_blank" rel="noreferrer" className="btn-s">Github</Link>
 					</div>
 				</div>
@@ -108,7 +108,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 					<div className="horizontal">
 						<div>
 							<h1>Blog</h1>
-							<p className="read">ヘッドレスCMS「Newt」のブログ機能を組み込み、「Next.js」カテゴリーのみを表示しています。<br />ブログの横スクロールはGsapを利用しています。</p>
+							<p className="read">ヘッドレスCMS「Newt」のブログ機能を組み込み、「Next.js」カテゴリーのみを表示しています。</p>
 							<div className="pagesWrapper" ref={pagesWrapperRef}>
 								<div className="pages" ref={pagesRef} id="pages">
 								{articles.map((article) => {
