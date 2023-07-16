@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
 
 export default function Header() {
 	const headerInner = useRef<HTMLElement | null>(null);
@@ -9,6 +10,15 @@ export default function Header() {
 	const menuBtn = useRef<HTMLElement | null>(null);
   
 	useEffect(() => {
+		const GSAP = require("gsap/CSSRulePlugin");
+		const { CSSRulePlugin } = GSAP;
+		gsap.registerPlugin(CSSRulePlugin); 
+		const rule = CSSRulePlugin.getRule('header::after');
+        gsap.fromTo(rule, {width: 0},{
+            width: "50%",
+            duration: .5,
+            ease: "power2.easeInOut",
+        })
 	  headerInner.current = document.querySelector(".header-inner");
 	  window.addEventListener("scroll", () => {
 		if (headerInner.current) {
