@@ -76,8 +76,8 @@ export default function Home({ articles }: { articles: Article[] }) {
 					<Image
 						src="/img/image5.webp"
 						alt="NEXT BASE"
-						width={672}
-						height={504}
+						width={750}
+						height={563}
 					/>
 					</div>
 					<div className="fb-text" data-aos="fade-right">
