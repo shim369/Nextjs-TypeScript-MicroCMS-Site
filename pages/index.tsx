@@ -119,6 +119,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 												<img
 													src={article.coverImage.src}
 													alt={article.title}
+													loading="lazy"
 												/>									
 												<p>{article.title}</p>
 												</div>
