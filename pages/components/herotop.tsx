@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useEffect } from "react"
 import { gsap } from "gsap"
+import Link from 'next/link'
 export default function Header() {
 	useEffect(() => {
         gsap.fromTo('.logo', {opacity: 0},{
@@ -53,7 +54,7 @@ export default function Header() {
                 />
             </div>
             <div className="catch2">
-                <h2>制作依頼について</h2>
+                <h2><Link href="#a04">制作依頼について</Link></h2>
                 <p>Contactから制作のご依頼を受け付けておりますので、詳細はお問い合わせください。</p>
             </div>
         </div>
