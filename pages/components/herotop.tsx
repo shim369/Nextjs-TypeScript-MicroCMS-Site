@@ -44,7 +44,6 @@ export default function Header() {
                 alt="NEXT BASE"
                 width={1135}
                 height={550}
-                sizes="(max-width: 600px) 100vw, 600px"
                 priority={true}
                 className="heroImage"
                 />
