@@ -18,11 +18,6 @@ export default function Header() {
             duration: .5,
             ease: "power2.easeInOut",
         })
-        gsap.fromTo('.hero', {height: "0vh"},{
-            height: "80vh",
-            ease: "power2.easeInOut",
-            duration: .5,
-        })
         gsap.fromTo('.catch1',{y: -30, opacity: 0,},{
             y: 0,
             opacity: 1,
