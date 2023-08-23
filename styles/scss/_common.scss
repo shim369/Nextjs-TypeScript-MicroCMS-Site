@@ -246,14 +246,13 @@ header {
 		color: #fff;
 		opacity: 0;
 		@media (max-width: 1200px) {
-			width: 64%;
+			width: 40%;
     		bottom: 30px;
 		}
 		@media (max-width: 1000px) {
-			width: 58%;
 			bottom: 8vh;
 		}
-		@media (max-width: 767px) {
+		@media (max-width: 480px) {
 			width: 62%;
 			padding: 16px;
 		}
