@@ -65,7 +65,7 @@ export default function Header() {
 						<li><Link href="/#a01">About</Link></li>
 						<li><Link href="/#a02">Skills</Link></li>
 						<li><Link href="/#a03">Blog</Link></li>
-						<li><Link href="/#a04">Contact</Link></li>
+						<li><Link href="#a04">Contact</Link></li>
 					</ul>
 				</nav>
 				<div className="sp-nav-area">

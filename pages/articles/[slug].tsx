@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import Headerblog from '../components/headerblog'
 import Heroblog from '../components/heroblog'
+import Contact from '../components/contact'
 import { getArticles, getArticleBySlug } from '../../lib/newt'
 import type { Article } from '../../types/article'
 import React, { useEffect } from 'react'
@@ -31,6 +32,7 @@ export default function Article({ article }: { article: Article }) {
 				</div>
 				<hr />
 				</section>
+        <Contact />
 			</Layout>
 			</div>
     </>

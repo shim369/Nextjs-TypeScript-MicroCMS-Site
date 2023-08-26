@@ -132,30 +132,7 @@ export default function Home({ articles }: { articles: Article[] }) {
 						</div>
 					</div>
 			</section>
-			<section className="contact" id="a04">
-					<h1>Contact</h1>
-					<div data-aos="fade-up">
-						<p>お問い合わせから遅くても数日以内には返信させていただきます。</p>
-						<p>ヘッドレスCMS「Newt」のお問い合わせ機能を利用しています。</p>
-						<Contact />
-					</div>
-					<div className="btn-area" data-aos="fade-up">
-						<Link href="https://nuxtbase.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
-							<div className="link-name">
-								<span>NUXT BASE</span>
-							</div>
-						</Link>
-						<Link href="https://astrobase.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
-							<div className="link-name">
-								<span>ASTRO BASE</span>
-							</div>
-						</Link>
-					</div>
-					<p className="contact-catch">Next.js & TypeScript & Newt</p>
-					<div className="contact-logo">
-						NEXT BASE
-					</div>
-			</section>
+			<Contact />
 			</Layout>
 			</div>
 		</>
