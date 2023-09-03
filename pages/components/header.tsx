@@ -17,7 +17,7 @@ export default function Header() {
         gsap.fromTo(rule, {width: 0},{
             width: "50%",
             duration: 1.5,
-            ease: "power3.easeInOut",
+            ease: "power2.easeInOut",
         })
 		headerInner.current = document.querySelector(".header-inner");
 		window.addEventListener("scroll", () => {
