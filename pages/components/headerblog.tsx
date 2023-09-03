@@ -16,7 +16,7 @@ export default function Header() {
 		const rule = CSSRulePlugin.getRule('header::after');
         gsap.fromTo(rule, {width: 0},{
             width: "50%",
-            duration: .5,
+            duration: 1.5,
             ease: "power2.easeInOut",
         })
 	  headerInner.current = document.querySelector(".header-inner");
