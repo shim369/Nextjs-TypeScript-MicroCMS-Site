@@ -28,10 +28,10 @@ export default function Contact() {
 							</div>
 						</Link>
 					</div>
-					<p className="contact-catch">Next.js & TypeScript & Newt</p>
 					<div className="contact-logo">
 						NEXT BASE
 					</div>
+					<p className="contact-catch">Next.js & TypeScript & Newt</p>
 			  </section>
   )
 }
