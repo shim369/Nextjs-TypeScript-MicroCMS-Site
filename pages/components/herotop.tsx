@@ -24,6 +24,11 @@ export default function Header() {
             duration: .5,
             ease: "power2.easeInOut",
         })
+        gsap.fromTo('.heroImage', {opacity: 0},{
+            opacity: 1,
+            duration: 1,
+            ease: "power2.easeInOut",
+        })
         gsap.fromTo('.catch1',{y: -30, opacity: 0,},{
             y: 0,
             opacity: 1,
