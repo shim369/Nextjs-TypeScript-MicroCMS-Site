@@ -5,7 +5,7 @@ import 'aos/dist/aos.css'
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<GoogleReCaptchaProvider reCaptchaKey="reCAPTCHA_site_key" language="ja">
+		<GoogleReCaptchaProvider reCaptchaKey="6Lc7CnUoAAAAAIxuMWwlknDHuVusZpiTB-ezUBua" language="ja">
 			<Component {...pageProps} />
 		</GoogleReCaptchaProvider>
 	)
