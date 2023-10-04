@@ -231,6 +231,13 @@
 			}
 		}
 	}
+	.reCAPTCHA {
+		font-size: 13px;
+		a {
+			color: #fff;
+			text-decoration: underline;
+		}
+	}
 	.contact-catch {
 		text-align: center;
 	}
@@ -239,3 +246,4 @@
 		font-size: 2em;
 	}
 }
+.grecaptcha-badge { visibility: hidden; }

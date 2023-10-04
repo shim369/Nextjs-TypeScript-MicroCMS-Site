@@ -1,32 +1,53 @@
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
+import { useRouter } from 'next/router'
 
 type FormValues = {
 	name: string
 	email: string
 	message: string
+	googleReCaptchaToken: string
 }
 
 export default function Contact() {
+	const router = useRouter()
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<FormValues>({ mode: 'onChange' })
+	const { executeRecaptcha } = useGoogleReCaptcha()
 	
 	const onSubmit = handleSubmit(async (data) => {
+		if (!executeRecaptcha) return
+		const token = await executeRecaptcha('submit')
+		data.googleReCaptchaToken = token
 		const formData = new FormData()
 		Object.entries(data).forEach(([key, value]) => {
 		  formData.append(key, value)
 		})
 	
-		await fetch('https://shim.form.newt.so/v1/SE-pHf46E', {
-		  method: 'POST',
-		  body: formData,
-		  headers: {
-			Accept: 'application/json',
-		  },
-		})  
+		try {
+			const response = await fetch(
+				'https://shim.form.newt.so/v1/SE-pHf46E',
+				{
+					method: 'POST',
+					body: formData,
+					headers: {
+						Accept: 'application/json',
+					},
+				}
+			)
+		
+			if (response.ok) {
+				router.push('/thanks')
+			} else {
+				router.push('/error')
+			}
+		} catch (err) {
+			router.push('/error')
+		}
 	})
 	return (
 	<section className="contact" id="a04">
@@ -64,6 +85,9 @@ export default function Contact() {
 			<button type="submit">Submit</button>
 			</div>
 		</form>
+		<p className='reCAPTCHA'>This site is protected by reCAPTCHA and the Google<br />
+		<a href="https://policies.google.com/privacy">Privacy Policy</a> and
+		<a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
 		</div>
 		<div className="btn-area" data-aos="fade-up">
 			<Link href="https://nuxtbase-gsap.vercel.app/" target="_blank" rel="noreferrer" className="btn-b">
