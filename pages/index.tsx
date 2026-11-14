@@ -48,7 +48,6 @@ export default function Home({ posts }: Props) {
       return
     }
 
-    const mm = gsap.matchMedia()
     const ctx = gsap.context(() => {
       // Loader → Hero intro
       const intro = gsap.timeline({ defaults: { ease: 'expo.out' } })
@@ -122,52 +121,37 @@ export default function Home({ posts }: Props) {
         scrollTrigger: { trigger: '.skills__grid', start: 'top 80%' },
       })
 
-      // Blog: PCは横スクロール、SPはスワイプ
+      // Blog: 縦スクロールに合わせて横に流す（PC・スマホ共通）
       const track = trackRef.current
       if (!track) return
-      mm.add('(min-width: 821px)', () => {
-        const getDist = () => Math.max(0, track.scrollWidth - window.innerWidth)
-        const tween = gsap.to(track, {
-          x: () => -getDist(),
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '.blog__pin',
-            start: 'top top',
-            end: () => '+=' + getDist(),
-            pin: true,
-            scrub: 1,
-            invalidateOnRefresh: true,
-            onUpdate: (self) => gsap.set('.blog__bar i', { scaleX: self.progress }),
-          },
-        })
-        gsap.utils.toArray<HTMLElement>('.blog__track .post').forEach((card) => {
-          const body = card.querySelector('.post__body')
-          if (!body) return
-          gsap.from(body, {
-            y: 40,
-            autoAlpha: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: card, containerAnimation: tween, start: 'left 85%' },
-          })
-        })
+      const getDist = () => Math.max(0, track.scrollWidth - window.innerWidth)
+      const tween = gsap.to(track, {
+        x: () => -getDist(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.blog__pin',
+          start: 'top top',
+          end: () => '+=' + getDist(),
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => gsap.set('.blog__bar i', { scaleX: self.progress }),
+        },
       })
-      mm.add('(max-width: 820px)', () => {
-        gsap.from('.blog__track .post', {
-          x: 80,
+      gsap.utils.toArray<HTMLElement>('.blog__track .post').forEach((card) => {
+        const body = card.querySelector('.post__body')
+        if (!body) return
+        gsap.from(body, {
+          y: 40,
           autoAlpha: 0,
-          duration: 1,
-          stagger: 0.1,
-          ease: 'expo.out',
-          scrollTrigger: { trigger: track, start: 'top 85%' },
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: card, containerAnimation: tween, start: 'left 85%' },
         })
       })
     }, root)
 
-    return () => {
-      mm.revert()
-      ctx.revert()
-    }
+    return () => ctx.revert()
   }, [])
 
   // スキルカードのスポットライト
