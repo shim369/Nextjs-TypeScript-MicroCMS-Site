@@ -19,7 +19,7 @@ const SKILLS = [
   { name: 'Nuxt.js', tag: 'Vue FW', img: '/img/nuxt.webp' },
   { name: 'Python', tag: 'Language', img: '/img/py.webp' },
   { name: 'Django', tag: 'Backend', img: '/img/django.webp' },
-  { name: 'microCMS', tag: 'Headless CMS', img: '/img/microcms.svg' },
+  { name: 'microCMS', tag: 'Headless CMS', img: '/img/microcms.png' },
   { name: 'Figma', tag: 'Design', img: '/img/figma.webp' },
 ]
 
