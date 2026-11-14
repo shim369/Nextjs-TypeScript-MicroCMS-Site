@@ -1,34 +1,32 @@
 {
   "name": "next-site",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@next/font": "^13.1.6",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
-    "aos": "^2.3.4",
-    "eslint": "8.33.0",
-    "eslint-config-next": "13.1.6",
-    "gsap": "^3.11.4",
-    "luxon": "^3.3.0",
-    "newt-client-js": "^3.2.4",
-    "next": "13.1.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-google-recaptcha-v3": "^1.10.1",
-    "react-hook-form": "^7.47.0",
-    "three": "^0.149.0",
-    "typescript": "4.9.5"
+    "gsap": "^3.12.5",
+    "microcms-js-sdk": "^3.6.0",
+    "next": "^14.2.0",
+    "nodemailer": "^10.5.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.4",
-    "swr": "^2.0.3"
+    "@types/node": "^20.0.0",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
+    "typescript": "^5.4.0"
   }
 }
