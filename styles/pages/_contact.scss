@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.contact {
+  &__box {
+    position: relative;
+    max-width: 760px;
+    margin-inline: auto;
+    padding: clamp(32px, 5vw, 56px);
+    overflow: hidden;
+    border: 1px solid $line;
+    border-radius: $radius + 6px;
+    background: $panel;
+
+    // 右上のにじみ
+    &::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -160px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba($teal, 0.35), transparent 65%);
+    }
+  }
+}

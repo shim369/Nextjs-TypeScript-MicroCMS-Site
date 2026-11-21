@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.not-found {
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding: var(--header-h) 0 64px;
+  text-align: center;
+
+  &__code {
+    @include font-en(900);
+    @include outline-text(0.35);
+    font-size: clamp(120px, 26vw, 320px);
+    line-height: 1;
+  }
+
+  p {
+    margin: 8px 0 36px;
+    color: $muted;
+  }
+}

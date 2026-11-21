@@ -1,0 +1,192 @@
+@use '../abstracts' as *;
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z(progress);
+  width: 100%;
+  height: 3px;
+  background: $gradient;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: z(header);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  pointer-events: none;
+
+  > * {
+    pointer-events: auto;
+  }
+
+  &__logo {
+    @include font-en(600);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: var(--header-h);
+    height: var(--header-h);
+    padding-left: 14px;
+    background: $teal;
+    font-size: 24px;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    transition:
+      background 0.4s,
+      width 0.4s $ease,
+      height 0.4s $ease,
+      font-size 0.4s $ease;
+
+    @include hover {
+      background: $teal-light;
+    }
+
+    @include mq(md) {
+      padding-left: 11px;
+      font-size: 18px;
+    }
+  }
+
+  &.is-scrolled &__logo {
+    width: 72px;
+    height: 72px;
+    padding-left: 11px;
+    font-size: 18px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: stretch;
+    height: 64px;
+    border-bottom-left-radius: $radius;
+    transition:
+      background 0.4s,
+      backdrop-filter 0.4s;
+
+    a {
+      @include font-en(500);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+
+      &:not(.header__cta) {
+        @include underline-grow($bottom: 18px, $inset: 24px);
+      }
+    }
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &.is-scrolled &__nav {
+    background: rgba(10, 10, 12, 0.62);
+    backdrop-filter: blur(14px);
+  }
+
+  &__cta {
+    padding: 0 32px !important;
+    background: $gradient;
+    background-size: 200% 100%;
+    transition: background-position 0.6s $ease;
+
+    @include hover {
+      background-position: 100% 0;
+    }
+  }
+}
+
+.burger {
+  position: relative;
+  display: none;
+  width: 64px;
+  height: 64px;
+  background: $gradient;
+
+  span {
+    position: absolute;
+    left: 20px;
+    width: 24px;
+    height: 2px;
+    background: $white;
+    transition:
+      transform 0.4s $ease,
+      opacity 0.3s;
+
+    &:nth-child(1) {
+      top: 25px;
+    }
+    &:nth-child(2) {
+      top: 31px;
+    }
+    &:nth-child(3) {
+      top: 37px;
+    }
+  }
+
+  &.is-open span {
+    &:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.sp-menu {
+  position: fixed;
+  inset: 0;
+  z-index: z(menu);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 10vw;
+  background: rgba($teal, 0.97);
+  visibility: hidden;
+  clip-path: circle(0 at calc(100% - 32px) 32px);
+  transition:
+    clip-path 0.7s $ease,
+    visibility 0s 0.7s;
+
+  &.is-open {
+    visibility: visible;
+    clip-path: circle(150% at calc(100% - 32px) 32px);
+    transition: clip-path 0.7s $ease;
+  }
+
+  a {
+    @include font-en(900);
+    font-size: clamp(40px, 12vw, 64px);
+    line-height: 1.2;
+  }
+
+  & &__sub {
+    @include font-en(600);
+    margin-top: 16px;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+  }
+
+  small {
+    margin-top: 32px;
+    font-family: var(--font-en);
+    opacity: 0.8;
+  }
+}

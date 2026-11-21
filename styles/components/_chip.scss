@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.chip {
+  @include font-en(600);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: $teal;
+  color: $white;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+}

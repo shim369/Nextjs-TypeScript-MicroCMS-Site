@@ -1,0 +1,66 @@
+@use '../abstracts' as *;
+
+// トップの横スクロールするブログ一覧
+.blog {
+  overflow: hidden;
+
+  &__pin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: clamp(80px, 10vw, 120px) 0;
+
+    @include mq(md) {
+      min-height: 100svh;
+      padding: calc(var(--header-h) + 16px) 0 40px;
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 32px;
+    width: max-content;
+    padding-inline: 4vw;
+
+    @include mq(md) {
+      gap: 16px;
+      padding-inline: 6vw;
+
+      .post {
+        flex-basis: 78vw;
+      }
+    }
+  }
+
+  &__bar {
+    position: relative;
+    width: min($container, 100% - $gutter * 2);
+    height: 2px;
+    margin: 48px auto 0;
+    background: $line;
+
+    @include mq(md) {
+      margin-top: 32px;
+    }
+
+    i {
+      @include cover;
+      background: $gradient;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+  }
+
+  // 動きを減らす設定では JS の横スクロールが無効なのでスワイプで見られるように
+  @media (prefers-reduced-motion: reduce) {
+    &__scroller {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .post {
+      scroll-snap-align: center;
+    }
+  }
+}

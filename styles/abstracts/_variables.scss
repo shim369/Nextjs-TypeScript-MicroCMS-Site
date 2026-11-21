@@ -1,0 +1,45 @@
+// =========================================================
+// Design tokens（黒 / ティール / オレンジ〜レッド）
+// =========================================================
+
+// Colors
+$black: #000;
+$ink: #0b0b0c;
+$panel: #141416;
+$white: #fff;
+$teal: #029183;
+$teal-light: #03b3a1;
+$red: #e3281f;
+$orange-mid: #e45a19;
+$orange: #e8891e;
+
+$line: rgba($white, 0.12);
+$muted: rgba($white, 0.64);
+$gradient: linear-gradient(120deg, $red 0%, $orange-mid 45%, $orange 100%);
+
+// Layout
+$container: 1200px;
+$gutter: 4%;
+$radius: 14px;
+$header-h: 96px;
+$header-h-sp: 72px;
+
+// Motion
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+// Breakpoints（max-width で使う）
+$breakpoints: (
+  sm: 640px,
+  md: 820px,
+  lg: 1000px,
+);
+
+// Layers
+$z: (
+  menu: 90,
+  header: 100,
+  progress: 150,
+  noise: 200,
+  cursor: 250,
+  loader: 300,
+);

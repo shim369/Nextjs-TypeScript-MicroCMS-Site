@@ -1,0 +1,118 @@
+@use '../abstracts' as *;
+
+.post {
+  position: relative;
+  isolation: isolate;
+  display: block; // <a> をグリッド内でも正しく伸ばす
+  flex: 0 0 clamp(280px, 32vw, 420px);
+  aspect-ratio: 1 / 1.08;
+  overflow: hidden;
+  border-radius: $radius;
+  background: $panel;
+
+  &__img {
+    @include cover;
+    @include image-cover;
+    z-index: -2;
+    transition: transform 1s $ease;
+  }
+
+  // 下に向かって暗くするグラデーション
+  &::after {
+    @include cover;
+    content: '';
+    z-index: -1;
+    background: linear-gradient(180deg, rgba($black, 0.1) 30%, rgba($black, 0.85) 100%);
+    transition: background 0.5s;
+  }
+
+  &__num {
+    @include font-en(900);
+    @include outline-text(0.55);
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    font-size: 56px;
+    line-height: 1;
+  }
+
+  &__body {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 28px;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-family: var(--font-en);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: rgba($white, 0.75);
+  }
+
+  &__title {
+    font-size: clamp(18px, 1.8vw, 24px);
+    font-weight: 700;
+    line-height: 1.45;
+    // 長いタイトルは3行で省略
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__more {
+    @include font-en(600);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+
+    i {
+      width: 36px;
+      height: 1px;
+      background: $white;
+      transition: width 0.5s $ease;
+    }
+  }
+
+  @include hover {
+    .post__img {
+      transform: scale(1.08);
+    }
+
+    &::after {
+      background: linear-gradient(180deg, rgba($red, 0.25) 0%, rgba($black, 0.9) 100%);
+    }
+
+    .post__more i {
+      width: 64px;
+    }
+  }
+
+  // 「すべての記事」カード
+  &--more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: $gradient;
+
+    &::after {
+      display: none;
+    }
+
+    > span:first-child {
+      @include font-en(900);
+      font-size: 40px;
+      line-height: 1.05;
+      text-align: center;
+    }
+  }
+}

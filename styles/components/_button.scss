@@ -1,0 +1,63 @@
+@use '../abstracts' as *;
+
+.btn {
+  @include font-en(600);
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 30px;
+  overflow: hidden;
+  border: 1px solid $white;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: color 0.4s, border-color 0.4s;
+
+  // ホバーでグラデーションがせり上がる
+  &::before {
+    @include cover;
+    content: '';
+    z-index: -1;
+    background: $gradient;
+    transform: translateY(101%);
+    transition: transform 0.5s $ease;
+  }
+
+  svg {
+    transition: transform 0.4s $ease;
+  }
+
+  @include hover {
+    border-color: transparent;
+
+    &::before {
+      transform: translateY(0);
+    }
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
+  &--fill {
+    border-color: transparent;
+    background: $gradient;
+
+    &::before {
+      background: $white;
+    }
+
+    @include hover {
+      color: $black;
+    }
+  }
+}

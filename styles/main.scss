@@ -1,0 +1,32 @@
+// =========================================================
+// NEXT BASE styles
+//   abstracts … 変数・ミックスイン（CSSを出力しない）
+//   base       … リセット・全体設定
+//   components … 再利用する部品
+//   pages      … ページ・セクション固有
+// =========================================================
+
+@use 'base/reset';
+@use 'base/root';
+@use 'base/base';
+
+@use 'components/button';
+@use 'components/chip';
+@use 'components/loader';
+@use 'components/cursor';
+@use 'components/header';
+@use 'components/section-head';
+@use 'components/post-card';
+@use 'components/form';
+@use 'components/footer';
+
+@use 'pages/hero';
+@use 'pages/flow';
+@use 'pages/about';
+@use 'pages/skills';
+@use 'pages/blog';
+@use 'pages/contact';
+@use 'pages/page-hero';
+@use 'pages/posts';
+@use 'pages/article';
+@use 'pages/not-found';

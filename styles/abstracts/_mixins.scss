@@ -1,0 +1,87 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+/// 指定ブレークポイント以下に適用
+/// @param {String} $bp - sm | md | lg
+@mixin mq($bp) {
+  @media (max-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+/// ホバー可能な端末のみ
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+/// 英字見出し用の書体
+@mixin font-en($weight: 600) {
+  font-family: var(--font-en);
+  font-weight: $weight;
+}
+
+/// グラデーションの文字
+@mixin gradient-text {
+  background: $gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/// 中抜き（アウトライン）文字
+@mixin outline-text($alpha: 0.5) {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba($white, $alpha);
+}
+
+/// 下線が左から伸びるリンク
+@mixin underline-grow($bottom: 0, $inset: 0) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: $inset;
+    right: $inset;
+    bottom: $bottom;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s $ease;
+  }
+
+  &:hover::after,
+  &.is-active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/// 枠線付きパネル
+@mixin panel {
+  background: $panel;
+  border: 1px solid $line;
+  border-radius: $radius;
+}
+
+/// 要素いっぱいに広げる
+@mixin cover {
+  position: absolute;
+  inset: 0;
+}
+
+/// next/image の fill 画像を cover で敷き詰める
+@mixin image-cover {
+  img {
+    object-fit: cover;
+  }
+}
+
+@function z($layer) {
+  @return map.get($z, $layer);
+}

@@ -1,0 +1,195 @@
+@use '../abstracts' as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+
+  @include mq(md) {
+    align-items: flex-end;
+    padding-bottom: 180px;
+  }
+
+  // 右側の写真（ヒーロー・下層ヒーロー共通）
+  &__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -2;
+    width: 68%;
+    height: 100%;
+    overflow: hidden;
+
+    &::before {
+      @include cover;
+      content: '';
+      z-index: 1;
+      background:
+        linear-gradient(90deg, $black 0%, rgba($black, 0.6) 30%, rgba($black, 0) 65%),
+        linear-gradient(0deg, $black 0%, transparent 30%);
+    }
+
+    @include mq(md) {
+      width: 100%;
+      height: 72%;
+
+      &::before {
+        background: linear-gradient(0deg, $black 5%, rgba($black, 0.2) 60%, rgba($black, 0.5) 100%);
+      }
+    }
+  }
+
+  // パララックス用に少し縦長にする
+  &__img {
+    @include image-cover;
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 112%;
+  }
+
+  &__stripe {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 34%;
+    height: 6px;
+    background: $teal;
+
+    @include mq(md) {
+      width: 50%;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    width: min($container, 100% - $gutter * 2);
+    margin-inline: auto;
+    padding-top: var(--header-h);
+  }
+
+  &__title {
+    @include font-en(900);
+    font-size: clamp(34px, 10.4vw, 144px);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    .char {
+      will-change: transform;
+    }
+  }
+
+  &__line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.04em;
+  }
+
+  &__sub {
+    @include font-en(500);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+    color: $muted;
+    font-size: clamp(14px, 1.4vw, 17px);
+    letter-spacing: 0.08em;
+
+    &::before {
+      content: '';
+      width: 48px;
+      height: 2px;
+      background: $gradient;
+    }
+  }
+
+  &__foot {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: min($container, 100% - $gutter * 2);
+    margin-inline: auto;
+
+    @include mq(md) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__link {
+    display: block;
+    max-width: 340px;
+    padding-left: 20px;
+    border-left: 2px solid $orange;
+
+    h2 {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+      font-size: 15px;
+      font-weight: 700;
+
+      svg {
+        transition: transform 0.4s $ease;
+      }
+    }
+
+    p {
+      color: $muted;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @include hover {
+      h2 svg {
+        transform: translateX(6px);
+      }
+    }
+  }
+
+  // スクロール誘導（縦線が流れる）
+  &__scroll {
+    @include font-en(600);
+    position: absolute;
+    left: calc((100% - min(#{$container}, 92%)) / 2);
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: $muted;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    writing-mode: vertical-rl;
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 64px;
+      background: linear-gradient($white, $white) 0 0 / 100% 40% no-repeat, rgba($white, 0.2);
+      animation: scroll-line 2s $ease infinite;
+    }
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+}
+
+@keyframes scroll-line {
+  0% {
+    background-position: 0 -40%;
+  }
+  100% {
+    background-position: 0 160%;
+  }
+}

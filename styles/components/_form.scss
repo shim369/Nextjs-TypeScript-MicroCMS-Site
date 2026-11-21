@@ -1,0 +1,105 @@
+@use '../abstracts' as *;
+
+.form {
+  position: relative;
+  display: grid;
+  gap: 22px;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+
+    @include mq(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 8px;
+  }
+
+  &__msg {
+    min-height: 1.5em;
+    color: $teal-light;
+    font-size: 14px;
+    text-align: center;
+
+    &.is-warn {
+      color: $orange;
+    }
+  }
+
+  &__note {
+    color: $muted;
+    font-size: 12px;
+    line-height: 1.9;
+    text-align: center;
+
+    a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+// フローティングラベルの入力欄
+.field {
+  position: relative;
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 24px 18px 10px;
+    border: 1px solid $line;
+    border-radius: 10px;
+    outline: none;
+    background: rgba($white, 0.04);
+    font-size: 16px;
+    font-weight: 400;
+    transition:
+      border-color 0.3s,
+      background 0.3s,
+      box-shadow 0.3s;
+
+    &:focus {
+      border-color: $teal-light;
+      background: rgba($teal, 0.06);
+      box-shadow: 0 0 0 4px rgba($teal, 0.15);
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      color: $teal-light;
+      transform: translateY(-11px) scale(0.78);
+    }
+  }
+
+  textarea {
+    min-height: 180px;
+    resize: vertical;
+  }
+
+  label {
+    position: absolute;
+    top: 17px;
+    left: 18px;
+    color: $muted;
+    font-family: var(--font-en);
+    font-size: 15px;
+    pointer-events: none;
+    transform-origin: left;
+    transition:
+      transform 0.3s $ease,
+      color 0.3s;
+  }
+
+  &__req {
+    margin-left: 4px;
+    color: $orange;
+  }
+}

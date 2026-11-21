@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+:root {
+  --font-en: var(--font-montserrat), 'Montserrat', sans-serif;
+  --font-ja: var(--font-noto), 'Noto Sans JP', var(--font-montserrat), sans-serif;
+  --header-h: #{$header-h};
+
+  @include mq(md) {
+    --header-h: #{$header-h-sp};
+  }
+}
