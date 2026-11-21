@@ -1,11 +1,11 @@
-import nodemailer from 'nodemailer'
-import type { NextApiRequest, NextApiResponse } from 'next'
+'use server'
 
-type ContactBody = {
-  name?: string
-  email?: string
-  message?: string
-  googleReCaptchaToken?: string
+import nodemailer from 'nodemailer'
+
+export type ContactState = {
+  status: 'idle' | 'success' | 'invalid' | 'error'
+  /** 送信後にフォームを初期化するためのキー */
+  submittedAt?: number
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -15,34 +15,20 @@ const verifyRecaptcha = async (secret: string, token: string) => {
     method: 'POST',
     body: new URLSearchParams({ secret, response: token }),
   })
-  const result: {
-    success: boolean
-    score?: number
-    action?: string
-    hostname?: string
-    'error-codes'?: string[]
-  } = await res.json()
+  const result: { success: boolean; score?: number; action?: string; 'error-codes'?: string[] } = await res.json()
   const ok = result.success && result.action === 'submit' && (result.score ?? 0) >= 0.5
   if (!ok) console.warn(`reCAPTCHA verification failed: ${JSON.stringify(result)}`)
   return ok
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST')
-    return res.status(405).json({ error: 'Method Not Allowed' })
-  }
+export async function sendContact(_prev: ContactState, formData: FormData): Promise<ContactState> {
+  const name = String(formData.get('name') ?? '').trim()
+  const email = String(formData.get('email') ?? '').trim()
+  const message = String(formData.get('message') ?? '').trim()
+  const token = String(formData.get('token') ?? '')
 
-  const body: ContactBody = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body ?? {})
-  const name = body.name?.trim()
-  const email = body.email?.trim()
-  const message = body.message?.trim()
-
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'Missing required fields' })
-  }
-  if (!EMAIL_RE.test(email) || name.length > 200 || message.length > 5000) {
-    return res.status(400).json({ error: 'Invalid input' })
+  if (!name || !email || !message || !EMAIL_RE.test(email) || name.length > 200 || message.length > 5000) {
+    return { status: 'invalid' }
   }
 
   const { RECAPTCHA_SECRET_KEY, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO_EMAIL } = process.env
@@ -50,15 +36,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (!SMTP_USER || !SMTP_PASS || !CONTACT_TO_EMAIL) {
     const missing = ['SMTP_USER', 'SMTP_PASS', 'CONTACT_TO_EMAIL'].filter((k) => !process.env[k])
     console.error(`Missing env: ${missing.join(', ')}`)
-    return res.status(500).json({ error: 'Mail is not configured' })
+    return { status: 'error' }
   }
 
   if (RECAPTCHA_SECRET_KEY) {
-    const token = body.googleReCaptchaToken
     if (!token) console.warn('reCAPTCHA token is missing')
-    if (!token || !(await verifyRecaptcha(RECAPTCHA_SECRET_KEY, token))) {
-      return res.status(403).json({ error: 'reCAPTCHA verification failed' })
-    }
+    if (!token || !(await verifyRecaptcha(RECAPTCHA_SECRET_KEY, token))) return { status: 'error' }
   }
 
   const port = Number(SMTP_PORT || '465')
@@ -79,8 +62,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
   } catch (err) {
     console.error('Failed to send contact mail', err)
-    return res.status(500).json({ error: 'Failed to send mail' })
+    return { status: 'error' }
   }
 
-  return res.status(200).json({ ok: true })
+  return { status: 'success', submittedAt: Date.now() }
 }

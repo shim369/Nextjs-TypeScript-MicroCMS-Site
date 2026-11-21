@@ -1,50 +1,39 @@
 import Link from 'next/link'
-import { ArrowUp, ArrowUpRight } from './Icons'
+import { ArrowUpRight } from './Icons'
+import ToTop from './ToTop'
+import { NAV, SISTERS, SITE } from '@/lib/site'
 
-const SISTERS = [
-  { name: 'NUXT BASE', href: 'https://nuxtbase-gsap.vercel.app/' },
-  { name: 'GATSBY BASE', href: 'https://gatsbybase.vercel.app/' },
-  { name: 'ASTRO BASE', href: 'https://astrobase.vercel.app/' },
-]
-
-const NAV = ['about', 'skills', 'blog', 'contact']
-
-export default function Footer({ home = false }: { home?: boolean }) {
+export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
         <div className="sister">
           {SISTERS.map((s) => (
-            <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" data-reveal>
+            <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" className="sister__link" data-reveal>
               <div>
                 <small>SISTER SITE</small>
                 {s.name}
               </div>
-              <span className="circle">
+              <span className="sister__circle">
                 <ArrowUpRight />
               </span>
             </a>
           ))}
         </div>
         <div className="footer__brand" data-reveal>
-          <div className="name">NEXT BASE</div>
-          <p>Next.js &amp; TypeScript &amp; microCMS</p>
+          <div className="footer__name">{SITE.name}</div>
+          <p>{SITE.tagline}</p>
         </div>
         <div className="footer__bottom">
-          <small>&copy;2023 NEXT BASE</small>
+          <small>&copy;2023 {SITE.name}</small>
           <nav aria-label="フッター">
-            {NAV.map((id) => (
-              <Link key={id} href={home ? `#${id}` : `/#${id}`}>
-                {id.charAt(0).toUpperCase() + id.slice(1)}
+            {NAV.map(({ id, label }) => (
+              <Link key={id} href={`/#${id}`}>
+                {label}
               </Link>
             ))}
           </nav>
-          <button type="button" className="to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            Page Top{' '}
-            <span>
-              <ArrowUp />
-            </span>
-          </button>
+          <ToTop />
         </div>
       </div>
     </footer>

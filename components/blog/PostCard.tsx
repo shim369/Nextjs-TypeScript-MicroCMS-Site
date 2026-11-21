@@ -1,23 +1,27 @@
+import Image from 'next/image'
 import Link from 'next/link'
-import type { BlogSummary } from '../types/blog'
-import { cmsImage, formatDate } from '../lib/format'
+import type { BlogSummary } from '@/types/blog'
+import { formatDate } from '@/lib/format'
 
-const FALLBACK_IMAGES = ['/img/image6.webp', '/img/image2.webp', '/img/image4.webp', '/img/image1.webp']
+type Props = {
+  post: BlogSummary
+  index: number
+  /** next/image の sizes（一覧グリッド / 横スクロールで異なる） */
+  sizes?: string
+}
 
-export default function PostCard({ post, index }: { post: BlogSummary; index: number }) {
-  const src = post.eyecatch ? cmsImage(post.eyecatch.url, 840) : FALLBACK_IMAGES[index % FALLBACK_IMAGES.length]
-
+export default function PostCard({ post, index, sizes = '(max-width: 820px) 78vw, 420px' }: Props) {
   return (
     <Link href={`/articles/${post.id}`} className="post">
       <div className="post__img">
-        <img src={src} alt="" loading="lazy" />
+        <Image src={post.eyecatch?.url ?? '/img/post-fallback.webp'} alt="" fill sizes={sizes} />
       </div>
       <span className="post__num" aria-hidden="true">
         {String(index + 1).padStart(2, '0')}
       </span>
       <div className="post__body">
         <div className="post__meta">
-          {post.category && <span className="post__cat">{post.category}</span>}
+          {post.category && <span className="chip">{post.category}</span>}
           <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
         </div>
         <h3 className="post__title">{post.title}</h3>

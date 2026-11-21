@@ -1,6 +1,6 @@
 type Props = {
   text: string
-  as?: 'span' | 'h1' | 'h2'
+  as?: 'span' | 'h2'
   className?: string
 }
 

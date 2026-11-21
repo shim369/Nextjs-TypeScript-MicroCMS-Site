@@ -1,59 +1,36 @@
+import type { ReactNode } from 'react'
+
 type P = { size?: number }
 
-export const ArrowRight = ({ size = 16 }: P) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    aria-hidden="true"
-  >
-    <path d="M5 12h14M13 5l7 7-7 7" />
+/** 線で描くアイコンの共通部分 */
+const Stroke = ({ size, children }: { size: number; children: ReactNode }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    {children}
   </svg>
+)
+
+export const ArrowRight = ({ size = 16 }: P) => (
+  <Stroke size={size}>
+    <path d="M5 12h14M13 5l7 7-7 7" />
+  </Stroke>
 )
 
 export const ArrowLeft = ({ size = 16 }: P) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    aria-hidden="true"
-  >
+  <Stroke size={size}>
     <path d="M19 12H5M11 5l-7 7 7 7" />
-  </svg>
+  </Stroke>
 )
 
 export const ArrowUpRight = ({ size = 16 }: P) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    aria-hidden="true"
-  >
+  <Stroke size={size}>
     <path d="M7 17 17 7M8 7h9v9" />
-  </svg>
+  </Stroke>
 )
 
 export const ArrowUp = ({ size = 14 }: P) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    aria-hidden="true"
-  >
+  <Stroke size={size}>
     <path d="M12 19V5M5 12l7-7 7 7" />
-  </svg>
+  </Stroke>
 )
 
 export const GithubIcon = ({ size = 18 }: P) => (

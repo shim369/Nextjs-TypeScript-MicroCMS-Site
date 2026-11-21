@@ -1,8 +1,9 @@
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 
 if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger, useGSAP)
   // スマホのアドレスバー伸縮でピン位置が再計算されてガタつくのを防ぐ
   ScrollTrigger.config({ ignoreMobileResize: true })
 }
@@ -10,4 +11,4 @@ if (typeof window !== 'undefined') {
 export const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-export { gsap, ScrollTrigger }
+export { gsap, ScrollTrigger, useGSAP }

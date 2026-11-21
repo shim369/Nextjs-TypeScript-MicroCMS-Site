@@ -11,5 +11,13 @@ export const formatDate = (iso?: string | null) => {
   return `${get('year')}.${get('month')}.${get('day')}`
 }
 
-/** microCMS の画像APIで WebP・指定幅に変換 */
-export const cmsImage = (url: string, width: number) => `${url}?fm=webp&w=${width}&q=80`
+/** HTML からタグを除いたプレーンテキスト */
+export const toPlainText = (html: string) =>
+  html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+/** 日本語 500 文字/分を目安にした読了時間（分） */
+export const readingMinutes = (html: string) => Math.max(1, Math.round(toPlainText(html).length / 500))

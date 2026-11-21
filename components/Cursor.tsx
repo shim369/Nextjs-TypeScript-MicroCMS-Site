@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef } from 'react'
 
 /** マウス追従カーソル（PC・ホバー可能な端末のみ） */
