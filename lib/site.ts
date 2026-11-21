@@ -4,7 +4,7 @@ export const SITE = {
   description:
     'Next.js・TypeScript・microCMS で制作したWeb制作ポートフォリオサイト NEXT BASE。GSAP のスクロールアニメーションとヘッドレスCMSのブログを組み込んでいます。',
   tagline: 'Next.js & TypeScript & microCMS',
-  github: 'https://github.com/shim369/Nextjs-TypeScript-Newt-Site',
+  github: 'https://github.com/shim369/Nextjs-TypeScript-MicroCMS-Site',
 } as const
 
 export const NAV = [
